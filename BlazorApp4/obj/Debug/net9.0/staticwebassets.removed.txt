@@ -1,3 +1,35 @@
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\bos-wallpaper.svg
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\IMG_3120.JPG
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\kaj-audio-particles.js
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\kaj.mp3
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\sauna-wallpaper.svg
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\sauna-wallpaper2.svg
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-07-18 223647.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 194813.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 194858.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 194920.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 194941.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 200811.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 210139.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 211023.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-06 214454.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-07 195948.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 140757.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 154652.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 154829.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 155209.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 155252.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 160124.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Schermafbeelding 2025-08-08 160212.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 085811.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 095428.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 112501.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 112930.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 115844.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 131648.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 131801.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\Screenshot 2025-08-07 131934.png
+C:\Users\Laura\Source\Repos\kaj-community-art\BlazorApp4\wwwroot\throne-background.svg
 C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\throne-background.svg
 C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\kaj-audio-particles.js
 C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\app.css

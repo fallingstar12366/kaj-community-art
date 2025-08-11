@@ -64,11 +64,6 @@ h1:focus {
     to { opacity: 0.95; transform: scale(1); }
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
 @media (max-width: 600px) {
     .iphone18pro-wallpaper {
         width: 98vw;
@@ -87,4 +82,8 @@ h1:focus {
     }
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+
+
 }
