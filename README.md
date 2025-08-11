@@ -8,7 +8,7 @@ Everything is free to view and download — all you need is a **free GitHub acco
 
 ## 📥 How to Download
 
-1. **Download individual images** directly from the [Wallpapers folder](https://github.com/fallingstar12366/kaj-community-art/tree/main/Wallpapers).
+1. **Download individual images** directly from the [Wallpapers folder](https://github.com/fallingstar12366/kaj-community-art/tree/master/BlazorApp4/wwwroot/Wallpapers).
 
 ---
 
@@ -21,7 +21,7 @@ Want to contribute or request something? You’re very welcome! You can:
 
 Please reach out by:  
 - [Opening an Issue](../../issues) on GitHub *(requires account)*  
-- **OR** sending me a message on Discord: `YourDiscordName#0000` *(replace with your actual Discord tag)*
+- **OR** sending me a message on Discord: `lauraburger`
 
 ---
 
