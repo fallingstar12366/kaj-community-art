@@ -1,0 +1,128 @@
+wwwroot\app.css
+wwwroot\bos-wallpaper.svg
+wwwroot\favicon.png
+wwwroot\IMG_3120.JPG
+wwwroot\kaj-audio-particles.js
+wwwroot\kaj.mp3
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\sauna-wallpaper.svg
+wwwroot\sauna-wallpaper2.svg
+wwwroot\Schermafbeelding 2025-07-18 223647.png
+wwwroot\Schermafbeelding 2025-08-06 194813.png
+wwwroot\Schermafbeelding 2025-08-06 194858.png
+wwwroot\Schermafbeelding 2025-08-06 194920.png
+wwwroot\Schermafbeelding 2025-08-06 194941.png
+wwwroot\Schermafbeelding 2025-08-06 200811.png
+wwwroot\Schermafbeelding 2025-08-06 210139.png
+wwwroot\Schermafbeelding 2025-08-06 211023.png
+wwwroot\Schermafbeelding 2025-08-06 214454.png
+wwwroot\Schermafbeelding 2025-08-07 195948.png
+wwwroot\Schermafbeelding 2025-08-08 140757.png
+wwwroot\Schermafbeelding 2025-08-08 154652.png
+wwwroot\Schermafbeelding 2025-08-08 154829.png
+wwwroot\Schermafbeelding 2025-08-08 155209.png
+wwwroot\Schermafbeelding 2025-08-08 155252.png
+wwwroot\Schermafbeelding 2025-08-08 160124.png
+wwwroot\Schermafbeelding 2025-08-08 160212.png
+wwwroot\Screenshot 2025-08-07 085811.png
+wwwroot\Screenshot 2025-08-07 095428.png
+wwwroot\Screenshot 2025-08-07 112501.png
+wwwroot\Screenshot 2025-08-07 112930.png
+wwwroot\Screenshot 2025-08-07 115844.png
+wwwroot\Screenshot 2025-08-07 131648.png
+wwwroot\Screenshot 2025-08-07 131801.png
+wwwroot\Screenshot 2025-08-07 131934.png
+wwwroot\throne-background.svg
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\throne-background.svg
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\kaj-audio-particles.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\app.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\sauna-wallpaper.svg
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\sauna-wallpaper2.svg
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\bos-wallpaper.svg
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\Users\burge\OneDrive\Afbeeldingen\Walpaper\BlazorApp4\BlazorApp4\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

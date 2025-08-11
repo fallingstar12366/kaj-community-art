@@ -1,0 +1,146 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-minimalist">
+    <!-- Minimalistische bosachtergrond met zachte kleurvlakken -->
+    <div class="forest-minimalist-bg"></div>
+    <!-- Zon als eenvoudige cirkel -->
+    <div class="forest-minimalist-sun"></div>
+    <!-- Troon als subtiel wit silhouet -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-minimalist-throne" />
+    <!-- Foto's in een strakke horizontale rij -->
+    <div class="forest-minimalist-photos">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest-minimalist">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-minimalist {
+    background: none;
+    position: relative;
+}
+.forest-minimalist-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #e0f7e9 0%, #b7e6b7 40%, #245c2a 100%);
+    z-index: 0;
+    opacity: 0.98;
+}
+.forest-minimalist-sun {
+    position: absolute;
+    left: 50%; top: 110px;
+    transform: translateX(-50%);
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: #ffe066;
+    box-shadow: 0 0 60px 30px #ffe06655;
+    z-index: 1;
+    opacity: 0.7;
+}
+.forest-minimalist-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.5;
+    filter: blur(0.5px) contrast(1.05);
+    mask-image: linear-gradient(to bottom, #fff 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #fff 80%,transparent 100%);
+    pointer-events: none;
+}
+.forest-minimalist-photos {
+    position: absolute;
+    left: 50%; top: 370px;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 370px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    background: rgba(255,255,255,0.04);
+    border-radius: 22px;
+    box-shadow: 0 4px 32px #0001;
+    padding: 12px 0;
+}
+.forest-minimalist-photos img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #0002;
+    border: 2px solid #eaeaea;
+    background: #f6f8fa;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background-blend-mode: lighten;
+    position: relative;
+    z-index: 1;
+}
+.forest-minimalist-photos img:hover {
+    box-shadow: 0 8px 32px #ffe066cc, 0 2px 12px #fff4 inset;
+    transform: scale(1.09);
+    z-index: 10;
+}
+.gambamark-title.forest-minimalist {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.3rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    color: #245c2a;
+    text-shadow: 0 2px 12px #b7e6b7, 0 0 8px #fff;
+    filter: brightness(1.08);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #b7e6b7;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #245c2a;
+    text-shadow: 0 2px 8px #b7e6b7;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">

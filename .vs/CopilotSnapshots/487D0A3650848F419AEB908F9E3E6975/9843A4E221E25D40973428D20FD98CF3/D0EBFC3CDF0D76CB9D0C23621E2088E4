@@ -1,0 +1,169 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-glow">
+    <!-- Bos-achtergrond met zachte gloed en lichte nevel -->
+    <div class="forest-glow-bg"></div>
+    <!-- Zon met subtiele stralen -->
+    <div class="forest-glow-sun">
+        <img src="/Schermafbeelding 2025-07-18 223647.png" alt="Zon" />
+        <div class="forest-glow-rays"></div>
+    </div>
+    <!-- Troon met fade -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-glow-throne" />
+    <!-- Foto's in een cirkelvormige collage -->
+    <div class="forest-glow-photos">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" class="fgp fgp1" />
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" class="fgp fgp2" />
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" class="fgp fgp3" />
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" class="fgp fgp4" />
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" class="fgp fgp5" />
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" class="fgp fgp6" />
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest-glow">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-glow {
+    background: none;
+    position: relative;
+}
+.forest-glow-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #5a7d5a 0%, #1b2e1b 100%);
+    z-index: 0;
+    opacity: 0.98;
+}
+.forest-glow-bg::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.13) 0%, transparent 70%), linear-gradient(180deg, transparent 60%, #0008 100%);
+    pointer-events: none;
+}
+.forest-glow-sun {
+    position: absolute;
+    left: 50%; top: 90px;
+    transform: translateX(-50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fffbe7 0%, #ffe066 60%, transparent 100%);
+    box-shadow: 0 0 60px 30px #fff7;
+    z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.88;
+}
+.forest-glow-sun img {
+    width: 100px; height: 100px; object-fit: cover; border-radius: 50%; opacity: 0.7; filter: blur(1.5px) brightness(1.08);
+}
+.forest-glow-rays {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 180px; height: 180px;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    background: conic-gradient(rgba(255,255,200,0.12) 0deg, rgba(255,255,200,0.02) 60deg, transparent 120deg, rgba(255,255,200,0.12) 180deg, transparent 240deg, rgba(255,255,200,0.12) 300deg, transparent 360deg);
+    border-radius: 50%;
+    z-index: 0;
+}
+.forest-glow-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.86;
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%,transparent 100%);
+    pointer-events: none;
+}
+.forest-glow-photos {
+    position: absolute;
+    left: 0; top: 270px; width: 100%; height: 340px;
+    z-index: 4;
+    pointer-events: none;
+}
+.fgp {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px #0005, 0 2px 8px #fff2 inset;
+    border: 2.5px solid #eaeaea;
+    background: #f6f8fa;
+    background-blend-mode: lighten;
+    pointer-events: auto;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.fgp1 { left: 50%; top: 0; transform: translate(-160px,0) rotate(-10deg) scale(1.04); z-index:2; }
+.fgp2 { left: 50%; top: 30px; transform: translate(60px,0) rotate(8deg) scale(1.02); z-index:3; }
+.fgp3 { left: 50%; top: 90px; transform: translate(-100px,0) rotate(-6deg); z-index:2; }
+.fgp4 { left: 50%; top: 120px; transform: translate(40px,0) rotate(7deg); z-index:4; }
+.fgp5 { left: 50%; top: 180px; transform: translate(-30px,0) rotate(-5deg); z-index:2; }
+.fgp6 { left: 50%; top: 220px; transform: translate(80px,0) rotate(5deg); z-index:3; }
+.fgp:hover {
+    box-shadow: 0 16px 48px #0008, 0 2px 12px #fff4 inset;
+    transform: scale(1.08) !important;
+    z-index: 10;
+}
+.gambamark-title.forest-glow {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #eaff00 20%, #00fff7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 32px #245c2a, 0 0 16px #fff, 0 0 2px #eaff00;
+    filter: brightness(1.13);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #eaff00;
+    border-radius: 0 0 14px 14px;
+    padding-bottom: 0.18em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+</style>

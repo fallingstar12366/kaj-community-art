@@ -1,0 +1,212 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<div class="kaj-typewriter">
+    <span class="kaj-typewriter-letter" style="margin-left:0em;">
+        K = @foreach (var (c, i) in kDisplay.Select((c, i) => (c, i)))
+        {
+            <span class="typewriter-letter-container">
+                <span class="steam"></span>
+                <span class="fade-in" style="animation-delay:@($"{i * 0.08}s")">@c</span>
+            </span>
+        }
+        @if (step == 0)
+        {
+            <span class="typewriter-cursor">|</span>
+        }
+    </span>
+    <span class="kaj-typewriter-letter" style="margin-left:1.7em;">
+        A = @foreach (var (c, i) in aDisplay.Select((c, i) => (c, i)))
+        {
+            <span class="typewriter-letter-container">
+                <span class="steam"></span>
+                <span class="fade-in" style="animation-delay:@($"{i * 0.08}s")">@c</span>
+            </span>
+        }
+        @if (step == 1)
+        {
+            <span class="typewriter-cursor">|</span>
+        }
+    </span>
+    <span class="kaj-typewriter-letter" style="margin-left:3.4em;">
+        J = @foreach (var (c, i) in jDisplay.Select((c, i) => (c, i)))
+        {
+            <span class="typewriter-letter-container">
+                <span class="steam"></span>
+                <span class="fade-in" style="animation-delay:@($"{i * 0.08}s")">@c</span>
+            </span>
+        }
+        @if (step == 2)
+        {
+            <span class="typewriter-cursor">|</span>
+        }
+    </span>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private string kDisplay = "";
+    private string aDisplay = "";
+    private string jDisplay = "";
+
+    private int step = 0;
+    private int subStep = 0;
+    private System.Threading.Timer? timer;
+
+    private string kName => "Kevin";
+    private string aName => "Axel";
+    private string jName => "Jakob";
+
+    protected override void OnInitialized()
+    {
+        timer = new System.Threading.Timer(_ =>
+        {
+            AnimateTypewriter();
+            InvokeAsync(StateHasChanged);
+        }, null, 0, 200);
+    }
+
+    private void AnimateTypewriter()
+    {
+        if (step == 0)
+        {
+            if (subStep < kName.Length)
+            {
+                kDisplay += kName[subStep];
+                subStep++;
+            }
+            else
+            {
+                step = 1;
+                subStep = 0;
+            }
+        }
+        else if (step == 1)
+        {
+            if (subStep < aName.Length)
+            {
+                aDisplay += aName[subStep];
+                subStep++;
+            }
+            else
+            {
+                step = 2;
+                subStep = 0;
+            }
+        }
+        else if (step == 2)
+        {
+            if (subStep < jName.Length)
+            {
+                jDisplay += jName[subStep];
+                subStep++;
+            }
+            else
+            {
+                step = 3;
+                timer?.Dispose();
+                // Reset alles voor een loop
+                step = 0;
+                subStep = 0;
+                kDisplay = "";
+                aDisplay = "";
+                jDisplay = "";
+            }
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
+
+<style>
+    .kaj-typewriter {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 10em;
+        user-select: none;
+        font-size: 2.2em;
+        font-weight: bold;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #229954;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    .kaj-typewriter-letter {
+        color: #145a32;
+        display: block;
+        transition: opacity 0.2s;
+    }
+
+    .typewriter-letter-container {
+        display: inline-block;
+        position: relative;
+    }
+
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.4s forwards;
+    }
+
+    .steam {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        width: 0.7em;
+        height: 1.2em;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 100%);
+        opacity: 0.7;
+        filter: blur(2.5px);
+        transform: translate(-50%, 0) scaleX(0.7);
+        pointer-events: none;
+        animation: steamUp 0.7s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes steamUp {
+        0% {
+            opacity: 0.7;
+            transform: translate(-50%, 0) scaleX(0.7);
+        }
+        80% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -1.2em) scaleX(1.1);
+        }
+    }
+    .typewriter-cursor {
+        display: inline-block;
+        width: 0.6em;
+        color: #fff;
+        background: transparent;
+        animation: blink 1s steps(1) infinite;
+        font-weight: normal;
+    }
+    @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+    }
+</style>

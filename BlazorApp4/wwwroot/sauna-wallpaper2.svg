@@ -1,0 +1,44 @@
+<svg width="1290" height="2796" viewBox="0 0 1290 2796" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Achtergrond hout -->
+  <rect width="1290" height="2796" fill="#c49a6c"/>
+  <rect width="1290" height="2796" fill="url(#woodgrain)" fill-opacity="0.18"/>
+  <defs>
+    <pattern id="woodgrain" patternUnits="userSpaceOnUse" width="120" height="80">
+      <rect width="120" height="80" fill="#b07d4a"/>
+      <ellipse cx="60" cy="40" rx="50" ry="18" fill="#d2b48c" fill-opacity="0.18"/>
+      <ellipse cx="30" cy="20" rx="18" ry="7" fill="#fff8e1" fill-opacity="0.08"/>
+      <ellipse cx="90" cy="60" rx="18" ry="7" fill="#fff8e1" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <!-- Banken -->
+  <rect x="180" y="1800" width="930" height="80" rx="18" fill="#e0b97a" stroke="#a97c50" stroke-width="8"/>
+  <rect x="260" y="2000" width="770" height="60" rx="14" fill="#e0b97a" stroke="#a97c50" stroke-width="6"/>
+  <!-- Saunakachel -->
+  <ellipse cx="645" cy="2200" rx="90" ry="40" fill="#444"/>
+  <rect x="555" y="2120" width="180" height="90" rx="32" fill="#666" stroke="#222" stroke-width="6"/>
+  <!-- Stenen -->
+  <ellipse cx="610" cy="2150" rx="18" ry="10" fill="#bbb"/>
+  <ellipse cx="645" cy="2155" rx="20" ry="12" fill="#aaa"/>
+  <ellipse cx="680" cy="2150" rx="18" ry="10" fill="#bbb"/>
+  <ellipse cx="630" cy="2165" rx="14" ry="8" fill="#999"/>
+  <ellipse cx="660" cy="2165" rx="14" ry="8" fill="#999"/>
+  <!-- Stoom -->
+  <ellipse cx="645" cy="2100" rx="30" ry="18" fill="white" fill-opacity="0.35">
+    <animate attributeName="cy" values="2100;2050;2100" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="670" cy="2080" rx="18" ry="10" fill="white" fill-opacity="0.22">
+    <animate attributeName="cy" values="2080;2030;2080" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="620" cy="2085" rx="15" ry="8" fill="white" fill-opacity="0.22">
+    <animate attributeName="cy" values="2085;2040;2085" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Emmer en lepel -->
+  <ellipse cx="1100" cy="2100" rx="28" ry="12" fill="#b07d4a"/>
+  <rect x="1082" y="2065" width="36" height="35" rx="10" fill="#e0b97a" stroke="#a97c50" stroke-width="4"/>
+  <rect x="1110" y="2050" width="6" height="25" rx="3" fill="#a97c50"/>
+  <!-- Lamp -->
+  <ellipse cx="645" cy="1700" rx="60" ry="24" fill="#ffe082" fill-opacity="0.25"/>
+  <ellipse cx="645" cy="1700" rx="30" ry="12" fill="#ffe082" fill-opacity="0.45"/>
+  <!-- Optioneel: tekst -->
+  <text x="50%" y="2500" text-anchor="middle" font-size="64" fill="#fff8e1" font-family="Segoe UI, Arial, sans-serif" opacity="0.7">Sauna</text>
+</svg>

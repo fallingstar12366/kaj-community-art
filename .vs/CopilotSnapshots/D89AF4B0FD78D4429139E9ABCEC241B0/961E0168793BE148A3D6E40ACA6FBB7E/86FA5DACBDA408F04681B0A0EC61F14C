@@ -1,0 +1,85 @@
+﻿@page "/kaionicecartoon"
+@rendermode InteractiveServer
+
+@inject NavigationManager Navigation
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper">
+    <div style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;">
+        <!-- Alleen achtergrond, geen cartoon -->
+        <svg viewBox="0 0 430 932" width="100%" height="100%" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <!-- IJs -->
+            <ellipse cx="215" cy="800" rx="160" ry="40" fill="#b3e6ff" opacity="0.7" />
+        </svg>
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title premium">Kai on Ice (Cartoon)</h1>
+    </div>
+</div>
+
+@code {
+    string[] WallpaperRoutes = new[]
+    {
+        "/forestwallpaper",
+        "/saunawallpaper",
+        "/kajwallpaper",
+        "/kajspotlightwallpaper",
+        "/kaionicecartoon",
+        "/home",
+        "/weather"
+    };
+
+    void ToggleWallpaper()
+    {
+        var current = Navigation.Uri.ToLower();
+        var baseUri = Navigation.BaseUri.ToLower();
+        var relative = current.StartsWith(baseUri) ? current.Substring(baseUri.Length - 1) : current;
+        int idx = Array.FindIndex(WallpaperRoutes, r => relative.StartsWith(r));
+        int nextIdx = (idx + 1) % WallpaperRoutes.Length;
+        Navigation.NavigateTo(WallpaperRoutes[nextIdx]);
+    }
+}
+
+<style>
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to bottom, #e0f7fa 0%, #b3e6ff 100%);
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gambamark-title.premium {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.9rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    color: #42B16D !important;
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #42B16D;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+</style>

@@ -1,0 +1,47 @@
+﻿@page "/kajwallpaper"
+@rendermode InteractiveServer
+
+<div class="kaj-cool-bg">
+    <!-- Zweedse vlaggetjeslijn -->
+    <svg class="kaj-flags-svg kaj-overlay" viewBox="0 0 900 60" width="100%" height="60"></svg>
+    <!-- Noorderlicht animatie -->
+    <svg class="kaj-northernlights-svg kaj-overlay" viewBox="0 0 900 200" width="100%" height="200">
+        <defs>
+            <linearGradient id="aurora1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#00ffd0" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#6a5cff" stop-opacity="0.5"/>
+            </linearGradient>
+            <linearGradient id="aurora2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#aaffff" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#ff6aff" stop-opacity="0.4"/>
+            </linearGradient>
+        </defs>
+        <path id="auroraPath1" d="M0 120 Q 200 80 400 120 T 900 120 V200 H0Z" fill="url(#aurora1)">
+            <animate attributeName="d" values="M0 120 Q 200 80 400 120 T 900 120 V200 H0Z;M0 120 Q 200 100 400 80 T 900 120 V200 H0Z;M0 120 Q 200 80 400 120 T 900 120 V200 H0Z" dur="7s" repeatCount="indefinite" />
+        </path>
+        <path id="auroraPath2" d="M0 160 Q 300 120 600 160 T 900 160 V200 H0Z" fill="url(#aurora2)" opacity="0.7">
+            <animate attributeName="d" values="M0 160 Q 300 120 600 160 T 900 160 V200 H0Z;M0 160 Q 300 180 600 120 T 900 160 V200 H0Z;M0 160 Q 300 120 600 160 T 900 160 V200 H0Z" dur="9s" repeatCount="indefinite" />
+        </path>
+    </svg>
+    <!-- Finse vlag overlay -->
+    <svg class="kaj-finnishflag-svg kaj-overlay" viewBox="0 0 120 80" width="120" height="80"></svg>
+    <!-- Cartoon accordeon, vis en sauna-emmer -->
+    <svg class="kaj-accordion-svg kaj-corner kaj-bottomright" viewBox="0 0 120 60" width="120" height="60"></svg>
+    <svg class="kaj-fish-svg kaj-corner kaj-bottomleft" viewBox="0 0 60 30" width="60" height="30"></svg>
+    <svg class="kaj-bucket-svg kaj-corner kaj-topright" viewBox="0 0 32 40" width="32" height="40"></svg>
+    <!-- Particle effect -->
+    <div class="kaj-particles kaj-overlay"></div>
+    <!-- Neon golven, muzieknoten, etc. -->
+    <svg class="kaj-cool-svg kaj-overlay" viewBox="0 0 900 900" width="100%" height="100%"></svg>
+    <div class="kaj-cool-content kaj-overlay kaj-center-content">
+        <span class="kaj-cool-title kaj-glitch kaj-notes">kaj
+            <span class="kaj-note" style="--i:0;">&#119070;</span>
+            <span class="kaj-note" style="--i:1;">&#119071;</span>
+            <span class="kaj-note" style="--i:2;">&#119082;</span>
+        </span>
+        <span class="kaj-cool-sub">band experience</span>
+        <div class="kaj-gloss"></div>
+    </div>
+</div>
+
+@* CSS is nu verplaatst naar een eigen bestand: KajWallpaper.razor.css *@

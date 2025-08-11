@@ -1,0 +1,46 @@
+﻿<svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Houten hek achtergrond -->
+  <rect x="0" y="0" width="600" height="800" fill="#3a2d1a"/>
+  <rect x="40" y="80" width="520" height="600" fill="#5a4630" stroke="#2d2214" stroke-width="12"/>
+  <!-- Hek planken -->
+  <rect x="60" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="120" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="180" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="240" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="300" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="360" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="420" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="480" y="100" width="20" height="560" fill="#6d5436"/>
+  <!-- Troon rugleuning: stokken in waaiervorm -->
+  <g stroke="#bfa76a" stroke-width="10" stroke-linecap="round">
+    <line x1="300" y1="500" x2="300" y2="100"/>
+    <line x1="300" y1="500" x2="270" y2="120"/>
+    <line x1="300" y1="500" x2="330" y2="120"/>
+    <line x1="300" y1="500" x2="240" y2="170"/>
+    <line x1="300" y1="500" x2="360" y2="170"/>
+    <line x1="300" y1="500" x2="210" y2="230"/>
+    <line x1="300" y1="500" x2="390" y2="230"/>
+    <line x1="300" y1="500" x2="190" y2="300"/>
+    <line x1="300" y1="500" x2="410" y2="300"/>
+    <line x1="300" y1="500" x2="185" y2="380"/>
+    <line x1="300" y1="500" x2="415" y2="380"/>
+    <line x1="300" y1="500" x2="200" y2="460"/>
+    <line x1="300" y1="500" x2="400" y2="460"/>
+  </g>
+  <!-- Mand met blauwe bessen -->
+  <g>
+    <!-- Mand -->
+    <ellipse cx="470" cy="670" rx="48" ry="22" fill="#bfa76a" stroke="#8c7a4f" stroke-width="4"/>
+    <rect x="422" y="640" width="96" height="36" rx="18" fill="#e2c48a" stroke="#8c7a4f" stroke-width="4"/>
+    <ellipse cx="470" cy="640" rx="48" ry="18" fill="#bfa76a" stroke="#8c7a4f" stroke-width="4"/>
+    <!-- Mand handvat -->
+    <path d="M430 640 Q470 600 510 640" fill="none" stroke="#bfa76a" stroke-width="8"/>
+    <!-- Blauwe bessen -->
+    <circle cx="450" cy="650" r="7" fill="#3a4cc5" stroke="#222" stroke-width="2"/>
+    <circle cx="470" cy="655" r="8" fill="#4b5ee6" stroke="#222" stroke-width="2"/>
+    <circle cx="490" cy="650" r="7" fill="#3a4cc5" stroke="#222" stroke-width="2"/>
+    <circle cx="460" cy="665" r="6" fill="#4b5ee6" stroke="#222" stroke-width="2"/>
+    <circle cx="480" cy="665" r="6" fill="#3a4cc5" stroke="#222" stroke-width="2"/>
+    <circle cx="470" cy="645" r="5" fill="#4b5ee6" stroke="#222" stroke-width="1.5"/>
+  </g>
+</svg>

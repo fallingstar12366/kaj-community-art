@@ -1,0 +1,33 @@
+<svg width="1290" height="2796" viewBox="0 0 1290 2796" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1290" height="2796" fill="#2e7d32"/>
+  <!-- Houten bankjes -->
+  <rect x="120" y="2100" width="1050" height="80" rx="18" fill="#b8864b" stroke="#8d5c1e" stroke-width="8"/>
+  <rect x="200" y="2250" width="890" height="60" rx="14" fill="#b8864b" stroke="#8d5c1e" stroke-width="6"/>
+  <!-- Saunakachel -->
+  <ellipse cx="645" cy="2400" rx="90" ry="40" fill="#444"/>
+  <rect x="555" y="2320" width="180" height="90" rx="32" fill="#666" stroke="#222" stroke-width="6"/>
+  <!-- Stenen -->
+  <ellipse cx="610" cy="2350" rx="18" ry="10" fill="#bbb"/>
+  <ellipse cx="645" cy="2355" rx="20" ry="12" fill="#aaa"/>
+  <ellipse cx="680" cy="2350" rx="18" ry="10" fill="#bbb"/>
+  <ellipse cx="630" cy="2365" rx="14" ry="8" fill="#999"/>
+  <ellipse cx="660" cy="2365" rx="14" ry="8" fill="#999"/>
+  <!-- Stoom -->
+  <ellipse cx="645" cy="2300" rx="30" ry="18" fill="white" fill-opacity="0.35">
+    <animate attributeName="cy" values="2300;2250;2300" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="670" cy="2280" rx="18" ry="10" fill="white" fill-opacity="0.22">
+    <animate attributeName="cy" values="2280;2230;2280" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="620" cy="2285" rx="15" ry="8" fill="white" fill-opacity="0.22">
+    <animate attributeName="cy" values="2285;2240;2285" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Hout textuur -->
+  <rect x="120" y="2100" width="1050" height="80" rx="18" fill="none" stroke="#d2a86b" stroke-width="2" stroke-dasharray="40 20"/>
+  <rect x="200" y="2250" width="890" height="60" rx="14" fill="none" stroke="#d2a86b" stroke-width="2" stroke-dasharray="30 12"/>
+  <!-- Extra sfeer: lamp -->
+  <ellipse cx="645" cy="2000" rx="60" ry="24" fill="#ffe082" fill-opacity="0.25"/>
+  <ellipse cx="645" cy="2000" rx="30" ry="12" fill="#ffe082" fill-opacity="0.45"/>
+  <!-- Optioneel: tekst -->
+  <text x="50%" y="2600" text-anchor="middle" font-size="64" fill="#fff8e1" font-family="Segoe UI, Arial, sans-serif" opacity="0.7">Sauna</text>
+</svg>

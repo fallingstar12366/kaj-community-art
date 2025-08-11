@@ -1,0 +1,322 @@
+﻿@page "/c"
+
+<!-- Apple Watch 7 45mm Face met iPhone wallpaper, donkere overlay en twee rechthoekige collage-foto's -->
+<div class="apple-watch-7-face">
+    <svg viewBox="0 0 128 168" width="128" height="168" aria-label="Apple Watch 7 45mm">
+        <defs>
+            <clipPath id="watchScreenClip">
+                <rect x="0" y="0" width="128" height="168" rx="36" />
+            </clipPath>
+            <filter id="watchShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.18" />
+            </filter>
+            <filter id="photoGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Wallpaper als achtergrond -->
+        <image href="/Screenshot 2025-08-11 135012.png"
+               x="0" y="0" width="128" height="168"
+               clip-path="url(#watchScreenClip)"
+               preserveAspectRatio="xMidYMid slice" />
+        <!-- Donkere overlay -->
+        <rect x="0" y="0" width="128" height="168" rx="36"
+              fill="rgba(30,20,40,0.38)" clip-path="url(#watchScreenClip)" />
+        <!-- Collage Foto 1 (linksboven, rechthoek met glow) -->
+        <g filter="url(#photoGlow)">
+            <rect x="12" y="14" width="38" height="28" rx="7" ry="7" fill="#fff5" />
+            <clipPath id="photo1clipRect">
+                <rect x="12" y="14" width="38" height="28" rx="7" ry="7" />
+            </clipPath>
+            <image href="/Screenshot 2025-08-11 135824.png"
+                   x="12" y="14" width="38" height="28"
+                   clip-path="url(#photo1clipRect)" />
+            <rect x="12" y="14" width="38" height="28" rx="7" ry="7" fill="none" stroke="#fff" stroke-width="2" />
+        </g>
+        <!-- Collage Foto 2 (rechts boven de titel, rechthoek met glow) -->
+        <g filter="url(#photoGlow)">
+            <rect x="78" y="62" width="38" height="28" rx="7" ry="7" fill="#fff5" />
+            <clipPath id="photo2clipRect">
+                <rect x="78" y="62" width="38" height="28" rx="7" ry="7" />
+            </clipPath>
+            <image href="/Screenshot 2025-08-11 144721.png"
+                   x="78" y="62" width="38" height="28"
+                   clip-path="url(#photo2clipRect)" />
+            <rect x="78" y="62" width="38" height="28" rx="7" ry="7" fill="none" stroke="#fff" stroke-width="2" />
+        </g>
+        <g filter="url(#photoGlow)">
+            <rect x="12" y="80" width="38" height="28" rx="7" ry="7" fill="#fff5" />
+            <clipPath id="photo3clipRect">
+                <rect x="12" y="80" width="38" height="28" rx="7" ry="7" />
+            </clipPath>
+            <image href="/Screenshot 2025-08-11 144533.png"
+                   x="12" y="80" width="38" height="28"
+                   clip-path="url(#photo3clipRect)" />
+            <rect x="12" y="80" width="38" height="28" rx="7" ry="7" fill="none" stroke="#fff" stroke-width="2" />
+        </g>
+        <!-- Watch body rand en schaduw -->
+        <rect x="0" y="0" width="128" height="168" rx="36"
+              fill="none" stroke="#222" stroke-width="4" filter="url(#watchShadow)" />
+        <!-- Titel in het midden (kleiner) -->
+        <text x="64" y="120" text-anchor="middle" font-family="'Permanent Marker', cursive" font-size="11"
+              fill="#e75480" stroke="#fff" stroke-width="0.7" paint-order="stroke">
+            Pa To Ta Na Kako?
+        </text>
+        <!-- Optioneel: subtiele rand -->
+        <rect x="2" y="2" width="124" height="164" rx="34" fill="none" stroke="#fff4" stroke-width="2" />
+    </svg>
+    <div class="apple-watch-label">Apple Watch 7<br />45mm</div>
+</div>
+
+<div class="iphone15pro-screen">
+    <div class="iphone15pro-bg-overlay"></div>
+    <div class="iphone15pro-center-content">
+        <div class="iphone15pro-content-block">
+            <div class="iphone15pro-title">
+                Pa To Ta Na Kako?
+            </div>
+            <div class="photo-collage-row-top">
+                <div class="photo-collage-card-glass" style="z-index:5; transform: rotate(-8deg); margin-left:0; margin-top:10px;">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 135824.png" alt="Afbeelding 1" class="photo-collage-img-glass-wide" />
+                </div>
+                <div class="photo-collage-card-glass" style="z-index:4; transform: rotate(4deg); margin-left:-10px; margin-top:30px;">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 144519.png" alt="Afbeelding 4" class="photo-collage-img-glass-wide" />
+                </div>
+                <div class="photo-collage-card-glass" style="z-index:2; transform: rotate(-2deg); margin-left:-10px; margin-top:20px;">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 142238.png" alt="Afbeelding 3" class="photo-collage-img-glass-wide" />
+                </div>
+            </div>
+            <div class="photo-collage-row-breed">
+                <div class="photo-collage-card-glass photo-collage-card-glass-breed" style="z-index:2; transform: rotate(3deg);">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 140800.png" alt="Afbeelding 2" class="photo-collage-img-glass-wide photo-collage-img-glass-breed" />
+                </div>
+                <div class="photo-collage-card-glass photo-collage-card-glass-breed" style="z-index:1; transform: rotate(-4deg); margin-top:30px;">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 144721.png" alt="Afbeelding 6" class="photo-collage-img-glass-wide photo-collage-img-glass-breed" />
+                </div>
+            </div>
+            <div class="photo-collage-row-bottom">
+                <div class="photo-collage-card-glass photo-collage-card-glass-bottom-tall" style="z-index:1; transform: rotate(-3deg); margin-left:10px;">
+                    <div class="photo-collage-glass-blur"></div>
+                    <img src="/Screenshot 2025-08-11 144533.png" alt="Afbeelding 5" class="photo-collage-img-glass-wide photo-collage-img-glass-bottom-tall" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .apple-watch-7-face {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+        margin-top: 12px;
+    }
+
+    .apple-watch-label {
+        font-size: 1rem;
+        color: #888;
+        text-align: center;
+        margin-top: 4px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        letter-spacing: 0.04em;
+    }
+
+    .iphone15pro-title {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 2.1rem;
+        padding: 0.3em 1em;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: none;
+        border: none;
+        border-radius: 0;
+        color: #e75480;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-clip: initial;
+        text-fill-color: initial;
+        text-shadow: 0 2px 8px #e7548088, 0 1px 0 #fff;
+        box-shadow: none;
+        position: relative;
+    }
+
+    /* De rest van je bestaande CSS blijft ongewijzigd */
+    .iphone15pro-screen {
+        width: 430px;
+        height: 932px;
+        border: 8px solid #222;
+        border-radius: 48px;
+        box-shadow: 0 0 32px rgba(0,0,0,0.2);
+        overflow: hidden;
+        position: relative;
+        background: url('/Screenshot 2025-08-11 135012.png') center center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+    }
+
+    .iphone15pro-bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(40, 30, 60, 0.38);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .iphone15pro-center-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    .iphone15pro-content-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        width: 100%;
+    }
+
+    .photo-collage-row-top {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        gap: 32px;
+        position: relative;
+        margin-top: 18px;
+        min-height: 140px;
+    }
+
+    .photo-collage-row-breed {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        position: relative;
+        margin-top: -18px;
+        min-height: 170px;
+    }
+
+    .photo-collage-card-glass-breed {
+        width: 150px;
+        height: 140px;
+        padding: 16px;
+    }
+
+    .photo-collage-row-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        gap: 18px;
+        position: relative;
+        margin-top: 10px;
+        min-height: 220px;
+    }
+
+    .photo-collage-card-glass {
+        background: linear-gradient(135deg, #fff 60%, #e0e0ff 100%);
+        border-radius: 22px;
+        box-shadow: 0 10px 36px 0 rgba(0,0,0,0.22), 0 2px 16px #fff8;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 120px;
+        position: relative;
+        margin-bottom: 0;
+        border: 3px solid;
+        border-image: linear-gradient(120deg, #b3cfff 0%, #ffe0f7 100%) 1;
+        overflow: visible;
+        backdrop-filter: blur(2.5px);
+        transition: box-shadow 0.18s;
+    }
+
+    .photo-collage-card-glass-breed {
+        width: 200px;
+        height: 140px;
+        padding: 16px;
+    }
+
+    .photo-collage-card-glass-bottom-tall {
+        width: 220px;
+        height: 240px;
+        padding: 18px;
+        border-radius: 26px;
+        border-width: 4px;
+        border-image: linear-gradient(120deg, #aeefff 0%, #ffb3e6 100%) 1;
+        box-shadow: 0 12px 40px 0 rgba(0,0,0,0.32), 0 4px 24px #fff6;
+        background: linear-gradient(120deg, #fff 70%, #f0eaff 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photo-collage-img-glass-wide {
+        display: block;
+        width: 80px;
+        height: 100px;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.13), 0 0px 0px #fff8;
+        border: 2.5px solid #fff;
+        background: #fff;
+        object-fit: cover;
+        position: relative;
+        z-index: 2;
+    }
+
+    .photo-collage-img-glass-breed {
+        width: 160px;
+        height: 120px;
+    }
+
+    .photo-collage-img-glass-bottom-tall {
+        width: 180px;
+        height: 220px;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 12px #fff8;
+        border: 3px solid #fff;
+        background: #fff;
+        object-fit: cover;
+        display: block;
+    }
+
+    .photo-collage-glass-blur {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        height: 80%;
+        transform: translate(-50%, -50%);
+        border-radius: 14px;
+        background: radial-gradient(ellipse at center, #fff9 0%, #fff0 80%);
+        filter: blur(12px);
+        z-index: 1;
+        pointer-events: none;
+    }
+</style>

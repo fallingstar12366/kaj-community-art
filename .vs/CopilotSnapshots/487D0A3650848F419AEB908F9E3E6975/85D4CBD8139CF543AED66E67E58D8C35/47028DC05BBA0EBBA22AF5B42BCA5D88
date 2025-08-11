@@ -1,0 +1,27 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .forest-bg {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100dvh;
+    z-index: -1;
+    background: url('/bos-wallpaper.svg') center center/cover no-repeat;
+  }
+</style>
+
+<div class="forest-bg"></div>
+
+<div style="position:relative; z-index:1; text-align:center; margin-top:3em; color:#fff; text-shadow:0 2px 8px #222;">
+    <h1>Bos Wallpaper</h1>
+    <p>Geniet van je bos-thema achtergrond!</p>
+</div>

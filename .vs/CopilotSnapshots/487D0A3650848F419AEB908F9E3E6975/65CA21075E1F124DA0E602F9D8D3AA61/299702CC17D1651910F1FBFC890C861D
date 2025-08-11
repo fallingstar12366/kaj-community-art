@@ -1,0 +1,169 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-gradientglass">
+    <!-- Gradient glass bosachtergrond met vloeiende kleuren en glas-effect -->
+    <div class="forest-gradientglass-bg"></div>
+    <!-- Zon als semi-transparante glassmorphism bol -->
+    <div class="forest-gradientglass-sun"></div>
+    <!-- Troon als glas-silhouet -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-gradientglass-throne" />
+    <!-- Foto's in een zwevende glass-card met gradient rand -->
+    <div class="forest-gradientglass-photos">
+        <div class="gradientglass-card">
+            <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+            <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+            <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+            <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+            <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+            <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+        </div>
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest-gradientglass">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-gradientglass {
+    background: none;
+    position: relative;
+}
+.forest-gradientglass-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(120deg, #a8ff78 0%, #78ffd6 50%, #4e54c8 100%);
+    z-index: 0;
+    opacity: 0.98;
+    filter: blur(0.5px) brightness(1.08) saturate(1.12);
+}
+.forest-gradientglass-bg::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 60% 10%, rgba(255,255,255,0.10) 0%, transparent 70%), linear-gradient(180deg, transparent 60%, #fff4 100%);
+    pointer-events: none;
+}
+.forest-gradientglass-sun {
+    position: absolute;
+    left: 50%; top: 110px;
+    transform: translateX(-50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 60%, #ffe066 0%, #78ffd6 60%, #4e54c8 100%);
+    box-shadow: 0 0 80px 40px #ffe06655, 0 0 120px 60px #4e54c855;
+    z-index: 1;
+    opacity: 0.8;
+    backdrop-filter: blur(8px) saturate(1.2);
+    -webkit-backdrop-filter: blur(8px) saturate(1.2);
+}
+.forest-gradientglass-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.65;
+    filter: blur(0.5px) contrast(1.05);
+    mask-image: linear-gradient(to bottom, #fff 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #fff 80%,transparent 100%);
+    pointer-events: none;
+}
+.forest-gradientglass-photos {
+    position: absolute;
+    left: 50%; top: 370px;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 370px;
+    display: flex;
+    justify-content: center;
+}
+.gradientglass-card {
+    display: flex;
+    gap: 14px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 32px;
+    box-shadow: 0 8px 48px #4e54c855, 0 2px 12px #fff2 inset;
+    padding: 18px 22px;
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: 2.5px solid;
+    border-image: linear-gradient(90deg, #ffe066 10%, #4e54c8 90%) 1;
+    align-items: center;
+}
+.gradientglass-card img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #0002;
+    border: 2px solid #eaeaea;
+    background: #f6f8fa;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background-blend-mode: lighten;
+    position: relative;
+    z-index: 1;
+}
+.gradientglass-card img:hover {
+    box-shadow: 0 8px 32px #ffe066cc, 0 2px 12px #fff4 inset;
+    transform: scale(1.11);
+    z-index: 10;
+}
+.gambamark-title.forest-gradientglass {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #ffe066 20%, #4e54c8 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 24px #4e54c8, 0 0 8px #fff;
+    filter: brightness(1.13);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #ffe066;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #4e54c8;
+    text-shadow: 0 2px 8px #ffe066;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">

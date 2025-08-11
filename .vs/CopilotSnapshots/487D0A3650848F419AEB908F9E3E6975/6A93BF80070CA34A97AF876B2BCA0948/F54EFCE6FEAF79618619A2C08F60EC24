@@ -1,0 +1,129 @@
+﻿// wwwroot/kaj-audio-particles.js
+// Audio-reactive particle effect for Blazor KajWallpaper
+
+let audioContext, analyser, sourceNode, dataArray, animationId;
+let particleCanvas, ctx, particles = [];
+
+function createParticles(count) {
+    particles = [];
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * particleCanvas.width,
+            y: Math.random() * particleCanvas.height,
+            r: 2 + Math.random() * 3,
+            dx: (Math.random() - 0.5) * 1.5,
+            dy: (Math.random() - 0.5) * 1.5,
+            color: `hsl(${Math.random()*360}, 80%, 60%)`
+        });
+    }
+}
+
+function drawParticles(volume, bass, treble) {
+    ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+    for (let i = 0; i < particles.length; i++) {
+        let p = particles[i];
+        // Maak grootte afhankelijk van bass, kleur van treble
+        let dynamicR = p.r + bass * 8;
+        let hue = (i * 360 / particles.length + treble * 120) % 360;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, dynamicR, 0, 2 * Math.PI);
+        ctx.fillStyle = `hsl(${hue}, 80%, ${60 + treble*30}%)`;
+        ctx.globalAlpha = 0.5 + volume * 0.5;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        // Snelheid afhankelijk van volume
+        p.x += p.dx * (1 + volume) + (Math.random()-0.5)*volume*2;
+        p.y += p.dy * (1 + volume) + (Math.random()-0.5)*volume*2;
+        if (p.x < 0 || p.x > particleCanvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > particleCanvas.height) p.dy *= -1;
+    }
+}
+
+function animateParticles() {
+    if (!analyser) return;
+    analyser.getByteFrequencyData(dataArray);
+    let volume = 0;
+    let bass = 0;
+    let treble = 0;
+    let bassCount = Math.floor(dataArray.length * 0.25);
+    let trebleCount = Math.floor(dataArray.length * 0.25);
+    for (let i = 0; i < dataArray.length; i++) volume += dataArray[i];
+    for (let i = 0; i < bassCount; i++) bass += dataArray[i];
+    for (let i = dataArray.length - trebleCount; i < dataArray.length; i++) treble += dataArray[i];
+    volume = volume / dataArray.length / 255;
+    bass = bass / bassCount / 255;
+    treble = treble / trebleCount / 255;
+    drawParticles(volume, bass, treble);
+    animationId = requestAnimationFrame(animateParticles);
+}
+
+export async function startAudioParticles(audioSelector, canvasSelector) {
+    particleCanvas = document.querySelector(canvasSelector);
+    if (!particleCanvas) return;
+    ctx = particleCanvas.getContext('2d');
+    createParticles(48);
+    let audio = document.querySelector(audioSelector);
+    if (!audio) return;
+    if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    if (!sourceNode) sourceNode = audioContext.createMediaElementSource(audio);
+    if (!analyser) analyser = audioContext.createAnalyser();
+    analyser.fftSize = 128;
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
+    sourceNode.connect(analyser);
+    analyser.connect(audioContext.destination);
+    // Start accordeon-animatie
+    function animateAll() {
+        analyser.getByteFrequencyData(dataArray);
+        let volume = 0;
+        let bass = 0;
+        let treble = 0;
+        let bassCount = Math.floor(dataArray.length * 0.25);
+        let trebleCount = Math.floor(dataArray.length * 0.25);
+        for (let i = 0; i < dataArray.length; i++) volume += dataArray[i];
+        for (let i = 0; i < bassCount; i++) bass += dataArray[i];
+        for (let i = dataArray.length - trebleCount; i < dataArray.length; i++) treble += dataArray[i];
+        volume = volume / dataArray.length / 255;
+        bass = bass / bassCount / 255;
+        treble = treble / trebleCount / 255;
+        drawParticles(volume, bass, treble);
+        updateKajLetters(volume, bass, treble);
+        animationId = requestAnimationFrame(animateAll);
+    }
+    animateAll();
+}
+
+export function stopAudioParticles() {
+    if (animationId) cancelAnimationFrame(animationId);
+    if (ctx && particleCanvas) ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+}
+
+function updateKajLetters(volume, bass, treble) {
+    // Selecteer elke frame de letterspans, zodat DOM-veranderingen geen probleem zijn
+    const spans = document.querySelectorAll('.kaj-cool-title > span');
+    if (!spans.length) return;
+    const now = Date.now();
+    // Accordeon-effect: de 'a' is het vaste middelpunt
+    let center = 1; // standaard voor 'kaj'
+    for (let i = 0; i < spans.length; i++) {
+        if (spans[i].textContent && spans[i].textContent.trim().toLowerCase() === 'a') {
+            center = i;
+            break;
+        }
+    }
+    // Minder heftig accordeon-effect zodat letters niet uit beeld gaan
+    const stretch = Math.abs(Math.sin(now / 900)) * (6 + bass * 8 + volume * 4);
+    for (let i = 0; i < spans.length; i++) {
+        const dist = i - center;
+        const absDist = Math.abs(dist);
+        // Laat de 'j' (meest rechtse letter) iets meer meebewegen, maar niet extreem
+        let stretchFactor = 1;
+        if (i === spans.length - 1) {
+            stretchFactor = 1.15;
+        }
+        // De 'a' beweegt nu altijd volledig mee
+        const x = dist * stretch * stretchFactor;
+        // Buitenkant zakt naar beneden bij uitrekken
+        const y = absDist * stretch * 0.13 * (i === spans.length - 1 ? 1.1 : 1);
+        spans[i].style.transform = `translate(${x}px, ${y}px)`;
+    }
+}

@@ -1,0 +1,6 @@
+﻿@page "/newpage"
+@rendermode InteractiveServer
+
+<h1>Nieuwe pagina</h1>
+
+<p>Welkom op je nieuwe Blazor-pagina!</p>

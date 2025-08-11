@@ -1,0 +1,89 @@
+﻿@page "/"
+
+@rendermode InteractiveServer
+
+<div class="iphone18pro-wallpaper">
+    <div class="wallpaper-collage"></div>
+    <div class="vorjeans-box">
+        <span class="vorjeans-stripe-text">vörjeans</span>
+    </div>
+</div>
+
+@code {
+    // Voeg hier je schermafbeeldingen toe
+    List<string> ScreenshotFiles = new()
+    {
+        "IMG_3120.JPG",
+        "Schermafbeelding 2025-08-06 194813.png",
+        "Schermafbeelding 2025-08-06 194858.png",
+        "Schermafbeelding 2025-08-06 194920.png",
+        "Schermafbeelding 2025-08-06 194941.png",
+        "Schermafbeelding 2025-08-06 200811.png"
+    };
+
+    public class PhotoInfo
+    {
+        public string FileName { get; set; } = "";
+        public int Width { get; set; } = 120;
+        public int Height { get; set; } = 180;
+        public string Widthpx => $"{Width}px";
+        public string Heightpx => $"{Height}px";
+    }
+}
+
+<style>
+    .iphone18pro-wallpaper {
+        width: 430px;
+        height: 932px;
+        border: 8px solid #222;
+        border-radius: 48px;
+        box-shadow: 0 0 32px rgba(0,0,0,0.2);
+        overflow: hidden;
+        position: relative;
+        background: repeating-linear-gradient( to right, #b22217 0px, #b22217 10px, #fff 10px, #fff 20px );
+    }
+    .wallpaper-collage {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .wallpaper-collage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+            url('/IMG_3120.JPG') left top/33% 33% no-repeat,
+            url('/Schermafbeelding 2025-08-06 194813.png') right top/33% 33% no-repeat,
+            url('/Schermafbeelding 2025-08-06 194858.png') left bottom/33% 33% no-repeat,
+            url('/Schermafbeelding 2025-08-06 194920.png') right bottom/33% 33% no-repeat,
+            url('/Schermafbeelding 2025-08-06 194941.png') center center/33% 33% no-repeat,
+            url('/Schermafbeelding 2025-08-06 200811.png') center top/33% 33% no-repeat;
+        opacity: 0.55;
+        filter: blur(2px) brightness(1.05);
+        background-color: transparent;
+    }
+    .vorjeans-box {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2566afcc;
+        border-radius: 16px;
+        padding: 0.5rem 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        display: inline-block;
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    }
+    .vorjeans-stripe-text {
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: 'Rock Salt', cursive;
+        color: #ffdd00;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        letter-spacing: 0.15em;
+    }
+</style>
+

@@ -1,0 +1,177 @@
+@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+@inject NavigationManager Navigation
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper">
+    <!-- Onzichtbare watermark overlay als base64 SVG image -->
+    <img class="invisible-watermark" src="@Base64WatermarkSvg" alt="watermark" style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:3;pointer-events:none;" />
+
+    <!-- SVG houten troon-achtergrond met fade -->
+    <div style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;">
+       <img src="/throne-background.svg" alt="Houten troon achtergrond" style="width:100%;height:100%;object-fit:cover;opacity:0.82;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);" />
+@*      <img src="/throne-background.svg" alt="Houten troon achtergrond" style="width:100%;height:100%;object-fit:cover;opacity:0.82;" />
+ *@
+
+    </div>
+    <!-- Decoratieve foto's als luxe polaroids -->
+    <div class="photo-polaroid premium" style="left:24px;top:120px;transform:rotate(-5deg);">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="photo-polaroid premium" style="right:32px;top:180px;transform:rotate(4deg);">
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="photo-polaroid premium" style="left:110px;top:340px;transform:rotate(-2deg);">
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="photo-polaroid premium" style="right:40px;top:500px;transform:rotate(3deg);">
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="photo-polaroid premium" style="left:40px;top:600px;transform:rotate(-3deg);">
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="photo-polaroid premium" style="right:60px;top:700px;transform:rotate(1deg);">
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+        <div class="polaroid-gloss"></div>
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title premium">Gambämark</h1>
+    </div>
+</div>
+
+@code {
+    string[] WallpaperRoutes = new[]
+    {
+        "/forestwallpaper",
+        "/saunawallpaper",
+        "/kajwallpaper",
+        "/kajspotlightwallpaper",
+        "/home",
+        "/weather"
+    };
+
+    // Persoonlijke watermark tekst
+    string PersonalWatermarkText = "LB";
+
+    // Base64-gecodeerde SVG met onzichtbare watermark
+    string Base64WatermarkSvg =>
+        "data:image/svg+xml;base64," +
+        Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($@"<svg xmlns='http://www.w3.org/2000/svg' width='430' height='932' viewBox='0 0 430 932'><text x='50%' y='95%' text-anchor='middle' font-size='32' fill='#000' opacity='0.01' font-family='Arial, sans-serif'>{PersonalWatermarkText}</text></svg>"));
+
+    void ToggleWallpaper()
+    {
+        var current = Navigation.Uri.ToLower();
+        var baseUri = Navigation.BaseUri.ToLower();
+        var relative = current.StartsWith(baseUri) ? current.Substring(baseUri.Length - 1) : current;
+        int idx = Array.FindIndex(WallpaperRoutes, r => relative.StartsWith(r));
+        int nextIdx = (idx + 1) % WallpaperRoutes.Length;
+        Navigation.NavigateTo(WallpaperRoutes[nextIdx]);
+    }
+}
+
+<style>
+.fullscreen-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+.photo-polaroid.premium {
+    position: absolute;
+    z-index: 2;
+    width: 120px;
+    background: linear-gradient(135deg, #f8fafc 80%, #e0e7ef 100%);
+    border-radius: 18px;
+    box-shadow: 0 12px 36px #0003, 0 2px 12px #fff2 inset;
+    padding: 12px 12px 26px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #eaeaea;
+    filter: drop-shadow(0 2px 8px #0002);
+    transition: none;
+    overflow: hidden;
+}
+.photo-polaroid.premium img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    margin-bottom: 7px;
+    border: 1.5px solid #e0e7ef;
+    background: #f6f8fa;
+}
+.polaroid-gloss {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 32px;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(180deg,rgba(255,255,255,0.38) 0%,rgba(255,255,255,0.08) 100%);
+    pointer-events: none;
+}
+.gambamark-title.premium {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.9rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    color: #42B16D !important;
+    /* background: linear-gradient(90deg, #42B16D); */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    /* text-fill-color: transparent; */
+ /*    text-shadow: 0 2px 32px #245c2a, 0 0 16px #fff, 0 0 2px ;
+    filter: brightness(1.15);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #42B16D;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em; */
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+
+/* Onzichtbare watermark styling */
+.invisible-watermark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+</style>

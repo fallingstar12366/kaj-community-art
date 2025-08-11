@@ -1,0 +1,201 @@
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes steamUp1 {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, 0) scaleX(0.7);
+    }
+    60% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -1.6em) scaleX(1.1) scaleY(1.2) skewX(-8deg);
+    }
+}
+@keyframes steamUp2 {
+    0% {
+        opacity: 0.35;
+        transform: translate(-50%, 0) scaleX(0.6);
+    }
+    60% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -2.1em) scaleX(1.2) scaleY(1.3) skewX(10deg);
+    }
+}
+@keyframes steamUp3 {
+    0% {
+        opacity: 0.25;
+        transform: translate(-50%, 0) scaleX(0.8);
+    }
+    60% {
+        opacity: 0.12;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -1.8em) scaleX(1.1) scaleY(1.1) skewX(5deg);
+    }
+}
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+@keyframes flameUp {
+    0% {
+        opacity: 0.85;
+        height: 0.38em;
+        filter: blur(0.5px);
+        transform: translate(-50%, 0) scaleY(1.1) scaleX(1);
+    }
+    60% {
+        opacity: 0.7;
+        height: 0.45em;
+        filter: blur(1.2px);
+        transform: translate(-50%, -0.04em) scaleY(1.2) scaleX(1.05);
+    }
+    100% {
+        opacity: 0.3;
+        height: 0.52em;
+        filter: blur(2px);
+        transform: translate(-50%, -0.09em) scaleY(1.3) scaleX(0.95);
+    }
+}
+@keyframes flameFlicker {
+    0% { filter: blur(0.5px); }
+    20% { filter: blur(1.2px); }
+    40% { filter: blur(0.7px); }
+    60% { filter: blur(1.5px); }
+    80% { filter: blur(0.8px); }
+    100% { filter: blur(0.5px); }
+}
+
+.kaj-typewriter {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 10em;
+    user-select: none;
+    font-size: 2.2em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #2e7d32 url('/Schermafbeelding 2025-08-07 195948.png') center center/cover no-repeat;
+    border-radius: 1.2em;
+    padding: 2em 2.5em;
+    box-shadow: 0 0 32px 0 #1b5e20;
+    position: relative;
+    overflow: hidden;
+}
+
+.kaj-typewriter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(200, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 1.2em;
+}
+
+.kaj-typewriter > * {
+    position: relative;
+    z-index: 1;
+}
+
+.kaj-typewriter-letter {
+    color: #1976d2;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.kaj-typewriter-letter:nth-child(2) {
+    color: #ff9800;
+}
+
+.kaj-typewriter-letter:nth-child(3) {
+    color: #43a047;
+}
+
+.typewriter-letter-container {
+    display: inline-block;
+    position: relative;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+.fade-in.rise-in {
+    animation: fadeInRise 0.5s cubic-bezier(.4,1.6,.6,1) both;
+}
+
+@keyframes fadeInRise {
+    from {
+        opacity: 0;
+        transform: translateY(1.2em) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.steam {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    width: 0.7em;
+    height: 1.2em;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%);
+    opacity: 0.5;
+    filter: blur(3.5px);
+    transform: translate(-50%, 0) scaleX(0.7);
+    pointer-events: none;
+}
+.steam1 {
+    animation: steamUp1 1.2s ease-out forwards;
+}
+.steam2 {
+    width: 0.5em;
+    height: 0.9em;
+    left: 40%;
+    opacity: 0.35;
+    animation: steamUp2 1.4s ease-out forwards;
+}
+.steam3 {
+    width: 0.6em;
+    height: 1.1em;
+    left: 60%;
+    opacity: 0.25;
+    animation: steamUp3 1.6s ease-out forwards;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 0.6em;
+    color: #fff;
+    background: transparent;
+    animation: blink 1s steps(1) infinite;
+    font-weight: normal;
+}
+
+.flame {
+    position: absolute;
+    left: 50%;
+    bottom: -0.2em;
+    width: 0.5em;
+    height: 0.38em;
+    background: radial-gradient(ellipse at center, #fffbe0 0%, #ffd700 40%, #ff9800 70%, #ff3c00 100%);
+    opacity: 0.85;
+    border-radius: 40% 40% 60% 60%;
+    transform: translate(-50%, 0) scaleY(1.1);
+    pointer-events: none;
+    z-index: 0;
+    animation: flameUp 0.7s infinite alternate, flameFlicker 0.4s infinite linear;
+}

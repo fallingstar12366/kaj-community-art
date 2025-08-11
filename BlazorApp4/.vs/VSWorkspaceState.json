@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\obj\\Debug\\net9.0",
+    "\\obj\\Debug\\net9.0\\staticwebassets",
+    "\\obj\\Release",
+    "\\obj\\Release\\net9.0",
+    "\\obj\\Release\\net9.0\\ref",
+    "\\obj\\Release\\net9.0\\refint",
+    "\\wwwroot"
+  ],
+  "SelectedNode": "\\obj\\Debug\\net9.0\\scopedcss",
+  "PreviewInSolutionExplorer": false
+}

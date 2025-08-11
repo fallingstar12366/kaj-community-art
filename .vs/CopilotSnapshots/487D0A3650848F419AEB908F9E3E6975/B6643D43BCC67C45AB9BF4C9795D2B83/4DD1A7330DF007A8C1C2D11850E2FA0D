@@ -1,0 +1,188 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-aurora">
+    <!-- Aurora bosachtergrond met bewegende lichtgloed -->
+    <div class="forest-aurora-bg">
+        <div class="aurora aurora1"></div>
+        <div class="aurora aurora2"></div>
+        <div class="aurora aurora3"></div>
+    </div>
+    <!-- Zon als zachte aurora-bol -->
+    <div class="forest-aurora-sun"></div>
+    <!-- Troon als wit silhouet -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-aurora-throne" />
+    <!-- Foto's in een gebogen aurora-lijn -->
+    <div class="forest-aurora-photos">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" class="faur-photo faur1" />
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" class="faur-photo faur2" />
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" class="faur-photo faur3" />
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" class="faur-photo faur4" />
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" class="faur-photo faur5" />
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" class="faur-photo faur6" />
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest-aurora">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-aurora {
+    background: none;
+    position: relative;
+}
+.forest-aurora-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #0e1a2b 0%, #1b3a2a 60%, #245c2a 100%);
+    z-index: 0;
+    overflow: hidden;
+}
+.aurora {
+    position: absolute;
+    width: 120%; height: 180px;
+    left: -10%;
+    border-radius: 50%;
+    opacity: 0.45;
+    filter: blur(18px) brightness(1.2);
+    animation: aurora-move 12s linear infinite alternate;
+}
+.aurora1 {
+    top: 60px;
+    background: linear-gradient(90deg, #a8ff78 0%, #78ffd6 60%, #4e54c8 100%);
+    animation-delay: 0s;
+}
+.aurora2 {
+    top: 120px;
+    background: linear-gradient(90deg, #ff6f91 0%, #ffe066 60%, #a8ff78 100%);
+    opacity: 0.32;
+    animation-delay: 2s;
+}
+.aurora3 {
+    top: 180px;
+    background: linear-gradient(90deg, #4e54c8 0%, #78ffd6 60%, #ffe066 100%);
+    opacity: 0.28;
+    animation-delay: 4s;
+}
+.forest-aurora-sun {
+    position: absolute;
+    left: 50%; top: 110px;
+    transform: translateX(-50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 60%, #ffe066 0%, #78ffd6 60%, #4e54c8 100%);
+    box-shadow: 0 0 80px 40px #ffe06655, 0 0 120px 60px #4e54c855;
+    z-index: 1;
+    opacity: 0.7;
+}
+.forest-aurora-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.7;
+    filter: blur(0.5px) contrast(1.05);
+    mask-image: linear-gradient(to bottom, #fff 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #fff 80%,transparent 100%);
+    pointer-events: none;
+}
+.forest-aurora-photos {
+    position: absolute;
+    left: 50%; top: 370px;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 400px;
+    height: 160px;
+    pointer-events: none;
+}
+.faur-photo {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #4e54c855, 0 2px 8px #fff2 inset;
+    border: 2px solid #eaeaea;
+    background: #f6f8fa;
+    background-blend-mode: lighten;
+    transition: box-shadow 0.2s, transform 0.2s;
+    filter: drop-shadow(0 2px 8px #4e54c822);
+    pointer-events: auto;
+}
+.faur1 { left: 0; top: 80px; transform: rotate(-12deg) scale(1.04); z-index:2; }
+.faur2 { left: 55px; top: 30px; transform: rotate(-6deg) scale(1.01); z-index:3; }
+.faur3 { left: 120px; top: 0; transform: rotate(2deg); z-index:4; }
+.faur4 { left: 200px; top: 20px; transform: rotate(7deg); z-index:3; }
+.faur5 { left: 270px; top: 70px; transform: rotate(-8deg); z-index:2; }
+.faur6 { left: 170px; top: 120px; transform: rotate(5deg); z-index:3; }
+.faur-photo:hover {
+    box-shadow: 0 16px 48px #78ffd6cc, 0 2px 12px #fff4 inset;
+    transform: scale(1.11) !important;
+    z-index: 10;
+}
+.gambamark-title.forest-aurora {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #ffe066 20%, #78ffd6 60%, #4e54c8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 24px #4e54c8, 0 0 8px #fff;
+    filter: brightness(1.13);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #78ffd6;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+</style>
+
+<style>
+@keyframes aurora-move {
+    0% { transform: translateX(0) scaleX(1); }
+    100% { transform: translateX(60px) scaleX(1.08); }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">

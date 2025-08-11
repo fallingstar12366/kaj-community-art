@@ -1,0 +1,101 @@
+﻿@page "/kajwallpaper"
+@rendermode InteractiveServer
+
+<div class="kaj-cool-bg">
+    <!-- Draaiende transparante cirkel -->
+    <svg class="kaj-rotating-svg" viewBox="0 0 900 900" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="450" cy="450" r="320" fill="none" stroke="#fff" stroke-width="32" opacity="0.08" />
+    </svg>
+    <!-- Particle effect -->
+    <div class="kaj-particles"></div>
+    <svg class="kaj-cool-svg" viewBox="0 0 900 900" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="pulse" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" stop-color="#fff" stop-opacity="0.18"/>
+                <stop offset="60%" stop-color="#00fff7" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0.0"/>
+            </radialGradient>
+            <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#00fff7"/>
+                <stop offset="100%" stop-color="#ff00cc"/>
+            </linearGradient>
+        </defs>
+        <!-- Pulsing cirkel -->
+        <circle cx="450" cy="420" r="220" fill="url(#pulse)">
+            <animate attributeName="r" values="220;260;220" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <!-- Neon golven -->
+        <path d="M0 700 Q 180 670 450 700 T 900 700" stroke="url(#wave)" stroke-width="16" fill="none" opacity="0.7">
+            <animate attributeName="d" values="M0 700 Q 180 670 450 700 T 900 700;M0 700 Q 180 770 450 700 T 900 700;M0 700 Q 180 670 450 700 T 900 700" dur="2s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 800 Q 300 770 900 800" stroke="#00fff7" stroke-width="8" fill="none" opacity="0.4">
+            <animate attributeName="d" values="M0 800 Q 300 770 900 800;M0 800 Q 300 830 900 800;M0 800 Q 300 770 900 800" dur="2s" repeatCount="indefinite" />
+        </path>
+        <!-- Muzieknoten animatie -->
+        <g>
+            <g>
+                <circle cx="180" cy="300" r="12" fill="#ff00cc">
+                    <animate attributeName="cy" values="300;220;300" dur="2.5s" repeatCount="indefinite" />
+                </circle>
+                <rect x="175" y="220" width="6" height="40" rx="3" fill="#ff00cc">
+                    <animate attributeName="y" values="220;140;220" dur="2.5s" repeatCount="indefinite" />
+                </rect>
+            </g>
+            <g>
+                <circle cx="720" cy="350" r="10" fill="#00fff7">
+                    <animate attributeName="cy" values="350;270;350" dur="2.2s" repeatCount="indefinite" />
+                </circle>
+                <rect x="715" y="270" width="6" height="32" rx="3" fill="#00fff7">
+                    <animate attributeName="y" values="270;210;270" dur="2.2s" repeatCount="indefinite" />
+                </rect>
+            </g>
+            <g>
+                <circle cx="600" cy="180" r="8" fill="#fffde4">
+                    <animate attributeName="cy" values="180;120;180" dur="2.8s" repeatCount="indefinite" />
+                </circle>
+                <rect x="596" y="120" width="6" height="24" rx="3" fill="#fffde4">
+                    <animate attributeName="y" values="120;80;120" dur="2.8s" repeatCount="indefinite" />
+                </rect>
+            </g>
+        </g>
+    </svg>
+    <div class="kaj-cool-content">
+        <span class="kaj-cool-title kaj-glitch">kaj</span>
+        <span class="kaj-cool-sub">band experience</span>
+        <div class="kaj-gloss"></div>
+    </div>
+</div>
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Voeg particles toe na render zodat ze altijd goed gecentreerd zijn
+            var js = (IJSInProcessRuntime)JSRuntime.Current;
+            js.InvokeVoid("eval", @"
+                const parent = document.querySelector('.kaj-particles');
+                if(parent && parent.children.length === 0) {
+                  const positions = [
+                    {top:'12%',left:'18%',delay:'0s'},
+                    {top:'22%',left:'70%',delay:'0.7s'},
+                    {top:'60%',left:'30%',delay:'1.2s'},
+                    {top:'80%',left:'80%',delay:'1.7s'},
+                    {top:'40%',left:'50%',delay:'2.1s'},
+                    {top:'75%',left:'15%',delay:'2.7s'}
+                  ];
+                  positions.forEach(p => {
+                    const d = document.createElement('div');
+                    d.className = 'kaj-particle';
+                    d.style.top = p.top;
+                    d.style.left = p.left;
+                    d.style.animationDelay = p.delay;
+                    parent.appendChild(d);
+                  });
+                }
+            ");
+        }
+    }
+}
+
+@* CSS is nu verplaatst naar een eigen bestand: KajWallpaper.razor.css *@

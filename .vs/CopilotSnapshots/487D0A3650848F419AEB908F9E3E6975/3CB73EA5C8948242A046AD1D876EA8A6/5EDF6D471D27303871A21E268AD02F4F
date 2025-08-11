@@ -1,0 +1,110 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper">
+    <!-- Groene achtergrond -->
+    <div style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;">
+        <svg viewBox="0 0 430 932" width="430" height="932" style="display:block;width:100%;height:100%;object-fit:cover;" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="bosGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#6bbf59"/>
+                    <stop offset="100%" stop-color="#245c2a"/>
+                </linearGradient>
+            </defs>
+            <rect width="430" height="932" fill="url(#bosGradient)"/>
+        </svg>
+    </div>
+    <!-- SVG houten troon-achtergrond -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+    <div class="gambamark-title">
+        <span class="gambamark-letter" style="animation-delay:0s;">G</span>
+        <span class="gambamark-letter" style="animation-delay:0.08s;">A</span>
+        <span class="gambamark-letter" style="animation-delay:0.16s;">M</span>
+        <span class="gambamark-letter" style="animation-delay:0.24s;">B</span>
+        <span class="gambamark-letter" style="animation-delay:0.32s;">Ä</span>
+        <span class="gambamark-letter" style="animation-delay:0.40s;">M</span>
+        <span class="gambamark-letter" style="animation-delay:0.48s;">A</span>
+        <span class="gambamark-letter" style="animation-delay:0.56s;">R</span>
+        <span class="gambamark-letter" style="animation-delay:0.64s;">K</span>
+    </div>
+    <div class="iphone18pro-content">
+        <h1>Bos Wallpaper</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+    .iphone18pro-wallpaper {
+        width: 430px;
+        height: 932px;
+        border: 8px solid #222;
+        border-radius: 48px;
+        box-shadow: 0 0 32px rgba(0,0,0,0.2);
+        overflow: hidden;
+        position: relative;
+        background: none;
+        margin: 32px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .iphone18pro-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-top: 3em;
+        color: #fff;
+        text-shadow: 0 2px 8px #222;
+    }
+    .gambamark-title {
+        width: 100%;
+        text-align: center;
+        margin-top: 2.2em;
+        margin-bottom: 0.5em;
+        font-family: 'Orbitron', 'Arial Black', Arial, sans-serif;
+        font-size: 3.2rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: #00eaff;
+        text-shadow: 0 0 32px #00eaff, 0 0 64px #fff, 0 0 8px #fff;
+        filter: brightness(1.3) drop-shadow(0 0 24px #00eaff);
+        z-index: 2;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 0.04em;
+        background: linear-gradient(90deg, #00eaff 10%, #eaff00 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .gambamark-letter {
+        display: inline-block;
+        animation: gambamarkPop 1.2s infinite cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    @keyframes gambamarkPop {
+        0%   { transform: scale(1) translateY(0); }
+        10%  { transform: scale(1.25) translateY(-10px) rotate(-6deg); }
+        20%  { transform: scale(0.95) translateY(8px) rotate(4deg); }
+        30%  { transform: scale(1.18) translateY(-16px) rotate(-3deg); }
+        40%  { transform: scale(0.92) translateY(12px) rotate(3deg); }
+        50%  { transform: scale(1.22) translateY(-20px) rotate(0deg); }
+        60%  { transform: scale(0.9) translateY(16px) rotate(2deg); }
+        70%  { transform: scale(1.1) translateY(-10px) rotate(-2deg); }
+        80%  { transform: scale(0.98) translateY(8px) rotate(2deg); }
+        90%  { transform: scale(1.05) translateY(-4px) rotate(-1deg); }
+        100% { transform: scale(1) translateY(0); }
+    }
+</style>

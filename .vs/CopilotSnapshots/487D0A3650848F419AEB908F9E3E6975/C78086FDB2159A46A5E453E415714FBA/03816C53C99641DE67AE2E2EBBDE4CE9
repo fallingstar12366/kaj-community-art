@@ -1,0 +1,42 @@
+﻿<svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Houten hek achtergrond -->
+  <rect x="0" y="0" width="600" height="800" fill="#3a2d1a"/>
+  <rect x="40" y="80" width="520" height="600" fill="#5a4630" stroke="#2d2214" stroke-width="12"/>
+  <!-- Hek planken -->
+  <rect x="60" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="120" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="180" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="240" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="300" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="360" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="420" y="100" width="20" height="560" fill="#6d5436"/>
+  <rect x="480" y="100" width="20" height="560" fill="#6d5436"/>
+  <!-- Troon van stokken, meer stokken voor voller effect -->
+  <g stroke="#bfa76a" stroke-width="10" stroke-linecap="round">
+    <line x1="300" y1="500" x2="300" y2="180"/>
+    <line x1="300" y1="500" x2="250" y2="200"/>
+    <line x1="300" y1="500" x2="350" y2="200"/>
+    <line x1="300" y1="500" x2="200" y2="260"/>
+    <line x1="300" y1="500" x2="400" y2="260"/>
+    <line x1="300" y1="500" x2="170" y2="320"/>
+    <line x1="300" y1="500" x2="430" y2="320"/>
+    <line x1="300" y1="500" x2="140" y2="400"/>
+    <line x1="300" y1="500" x2="460" y2="400"/>
+    <line x1="300" y1="500" x2="110" y2="480"/>
+    <line x1="300" y1="500" x2="490" y2="480"/>
+    <line x1="300" y1="500" x2="180" y2="120"/>
+    <line x1="300" y1="500" x2="420" y2="120"/>
+  </g>
+  <!-- Troon zitting -->
+  <ellipse cx="300" cy="540" rx="70" ry="30" fill="#bfa76a" stroke="#8c7a4f" stroke-width="6"/>
+  <!-- Houtblokken onder troon -->
+  <g>
+    <rect x="180" y="570" width="30" height="40" fill="#a07c4f"/>
+    <rect x="210" y="580" width="30" height="40" fill="#8c6a3f"/>
+    <rect x="240" y="590" width="30" height="40" fill="#a07c4f"/>
+    <rect x="270" y="600" width="30" height="40" fill="#8c6a3f"/>
+    <rect x="300" y="590" width="30" height="40" fill="#a07c4f"/>
+    <rect x="330" y="580" width="30" height="40" fill="#8c6a3f"/>
+    <rect x="360" y="570" width="30" height="40" fill="#a07c4f"/>
+  </g>
+</svg>

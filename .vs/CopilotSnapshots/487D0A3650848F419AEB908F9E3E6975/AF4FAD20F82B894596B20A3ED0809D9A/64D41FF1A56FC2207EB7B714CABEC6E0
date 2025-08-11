@@ -1,0 +1,171 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper modern-polaroid better-polaroid">
+    <!-- Groene achtergrond met vignette -->
+    <div class="better-bg"></div>
+    <!-- Zon-afbeelding met subtiele glow -->
+    <div class="better-sun"></div>
+    <!-- Troon als subtiel silhouet -->
+    <div class="better-throne"></div>
+    <!-- Foto's als cards in een responsive grid -->
+    <div class="better-polaroid-grid">
+        <div class="better-polaroid-card rotate1">
+            <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+        </div>
+        <div class="better-polaroid-card rotate2">
+            <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+        </div>
+        <div class="better-polaroid-card rotate3">
+            <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+        </div>
+        <div class="better-polaroid-card rotate4">
+            <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+        </div>
+        <div class="better-polaroid-card rotate5">
+            <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+        </div>
+        <div class="better-polaroid-card rotate6">
+            <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+        </div>
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title better-polaroid">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.better-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(120deg, #e0f7e9 0%, #b7e6b7 40%, #245c2a 100%);
+    z-index: 0;
+    opacity: 0.98;
+    filter: blur(1.5px) brightness(1.08) saturate(1.12);
+}
+.better-sun {
+    position: absolute;
+    left: 50%; top: 90px;
+    transform: translateX(-50%);
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe066 0%, #fffbe7cc 60%, transparent 100%);
+    box-shadow: 0 0 80px 40px #ffe06655, 0 0 120px 60px #fffbe7cc;
+    z-index: 1;
+    opacity: 0.8;
+}
+.better-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    z-index: 2;
+    opacity: 0.35;
+    background: url('/throne-background.svg') center/cover no-repeat;
+    filter: blur(1.2px) contrast(1.08);
+    mask-image: linear-gradient(to bottom, #fff 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #fff 80%,transparent 100%);
+    pointer-events: none;
+}
+.better-polaroid-grid {
+    position: absolute;
+    left: 50%; top: 320px;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 18px;
+    justify-items: center;
+}
+.better-polaroid-card {
+    background: rgba(255,255,255,0.28);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #b7e6b7cc, 0 2px 8px #fff2 inset;
+    padding: 10px 10px 18px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid #eaeaea;
+    backdrop-filter: blur(12px) saturate(1.15);
+    -webkit-backdrop-filter: blur(12px) saturate(1.15);
+    transition: box-shadow 0.22s, transform 0.22s;
+    cursor: pointer;
+}
+.better-polaroid-card img {
+    width: 92px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #0002;
+    background: #f6f8fa;
+    background-blend-mode: lighten;
+    transition: box-shadow 0.22s, transform 0.22s;
+}
+.better-polaroid-card:hover {
+    box-shadow: 0 12px 36px #ffe066cc, 0 2px 12px #fff4 inset;
+    transform: scale(1.09) rotate(-2deg);
+    z-index: 10;
+}
+.rotate1 { transform: rotate(-3deg); }
+.rotate2 { transform: rotate(2deg); }
+.rotate3 { transform: rotate(-1deg); }
+.rotate4 { transform: rotate(2.5deg); }
+.rotate5 { transform: rotate(-2.5deg); }
+.rotate6 { transform: rotate(1deg); }
+.gambamark-title.better-polaroid {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #ffe066 20%, #245c2a 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 24px #b7e6b7, 0 0 8px #fff;
+    filter: brightness(1.14);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #ffe066;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #245c2a;
+    text-shadow: 0 2px 8px #b7e6b7;
+}
+</style>

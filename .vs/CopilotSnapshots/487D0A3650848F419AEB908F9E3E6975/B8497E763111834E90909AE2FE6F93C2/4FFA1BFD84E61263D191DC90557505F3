@@ -1,0 +1,148 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-art">
+    <!-- Artistieke bosachtergrond met aquarel-effect -->
+    <div class="forest-art-bg"></div>
+    <!-- Zon als transparante cirkel met lichte glow -->
+    <div class="forest-art-sun"></div>
+    <!-- Troon als artistiek silhouet -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-art-throne" />
+    <!-- Foto's als overlappende polaroids in een speelse compositie -->
+    <div class="forest-art-photos">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" class="fa-photo fa1" />
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" class="fa-photo fa2" />
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" class="fa-photo fa3" />
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" class="fa-photo fa4" />
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" class="fa-photo fa5" />
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" class="fa-photo fa6" />
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest-art">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-art {
+    background: none;
+    position: relative;
+}
+.forest-art-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: url('/bos-wallpaper.svg') center center/cover no-repeat, linear-gradient(180deg, #b7e6b7 0%, #245c2a 100%);
+    z-index: 0;
+    opacity: 0.98;
+    filter: blur(0.5px) brightness(1.04) saturate(1.08);
+}
+.forest-art-sun {
+    position: absolute;
+    left: 50%; top: 90px;
+    transform: translateX(-50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fffbe7cc 0%, #ffe06688 60%, transparent 100%);
+    box-shadow: 0 0 80px 40px #fff6;
+    z-index: 1;
+    opacity: 0.7;
+}
+.forest-art-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.72;
+    filter: blur(0.5px) contrast(1.1);
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%,transparent 100%);
+    pointer-events: none;
+}
+.forest-art-photos {
+    position: absolute;
+    left: 50%; top: 320px;
+    transform: translateX(-50%);
+    width: 340px; height: 200px;
+    z-index: 4;
+}
+.fa-photo {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px #0004, 0 2px 8px #fff2 inset;
+    border: 2.5px solid #eaeaea;
+    background: #f6f8fa;
+    background-blend-mode: lighten;
+    transition: box-shadow 0.2s, transform 0.2s;
+    filter: drop-shadow(0 2px 8px #0002);
+}
+.fa1 { left: 0; top: 20px; transform: rotate(-8deg) scale(1.03); z-index:2; }
+.fa2 { left: 60px; top: 0; transform: rotate(6deg) scale(1.01); z-index:3; }
+.fa3 { left: 120px; top: 30px; transform: rotate(-4deg); z-index:2; }
+.fa4 { left: 180px; top: 10px; transform: rotate(7deg); z-index:4; }
+.fa5 { left: 80px; top: 80px; transform: rotate(-6deg); z-index:2; }
+.fa6 { left: 200px; top: 90px; transform: rotate(5deg); z-index:3; }
+.fa-photo:hover {
+    box-shadow: 0 16px 48px #0008, 0 2px 12px #fff4 inset;
+    transform: scale(1.08) !important;
+    z-index: 10;
+}
+.gambamark-title.forest-art {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #eaff00 20%, #00fff7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 24px #245c2a, 0 0 8px #fff;
+    filter: brightness(1.12);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #eaff00;
+    border-radius: 0 0 12px 12px;
+    padding-bottom: 0.15em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+</style>

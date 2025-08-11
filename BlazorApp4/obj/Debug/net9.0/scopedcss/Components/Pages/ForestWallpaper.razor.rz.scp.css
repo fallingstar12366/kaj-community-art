@@ -1,0 +1,48 @@
+/* Verplaats deze CSS naar een .razor.css bestand voor ForestWallpaper */
+/*.gambamark-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.2em;
+    margin-bottom: 0.5em;
+    font-family: 'Orbitron', 'Arial Black', Arial, sans-serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: #00eaff;
+    text-shadow: 0 0 32px #00eaff, 0 0 64px #fff, 0 0 8px #fff;
+    filter: brightness(1.3) drop-shadow(0 0 24px #00eaff);
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.04em;
+    background: linear-gradient(90deg, #00eaff 10%, #eaff00 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}*/
+/*.gambamark-letter {
+    display: inline-block;
+    animation: gambamarkPop 1.2s infinite cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes gambamarkPop {
+    0%   { transform: scale(1) translateY(0); }
+    10%  { transform: scale(1.25) translateY(-10px) rotate(-6deg); }
+    20%  { transform: scale(0.95) translateY(8px) rotate(4deg); }
+    30%  { transform: scale(1.18) translateY(-16px) rotate(-3deg); }
+    40%  { transform: scale(0.92) translateY(12px) rotate(3deg); }
+    50%  { transform: scale(1.22) translateY(-20px) rotate(0deg); }
+    60%  { transform: scale(0.9) translateY(16px) rotate(2deg); }
+    70%  { transform: scale(1.1) translateY(-10px) rotate(-2deg); }
+    80%  { transform: scale(0.98) translateY(8px) rotate(2deg); }
+    90%  { transform: scale(1.05) translateY(-4px) rotate(-1deg); }
+    100% { transform: scale(1) translateY(0); }
+}
+@keyframes aurora-move {
+    0% { transform: translateX(0) scaleX(1); }
+    100% { transform: translateX(60px) scaleX(1.08); }
+}
+@keyframes floatAnim {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-18px) scale(1.07); }
+}*/

@@ -1,0 +1,119 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<div class="kaj-typewriter">
+    <span class="kaj-typewriter-letter" style="margin-left:0em;">K = @kDisplay</span>
+    <span class="kaj-typewriter-letter" style="margin-left:1.7em;">A = @aDisplay</span>
+    <span class="kaj-typewriter-letter" style="margin-left:3.4em;">J = @jDisplay</span>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private string kDisplay = "";
+    private string aDisplay = "";
+    private string jDisplay = "";
+
+    private int step = 0;
+    private int subStep = 0;
+    private System.Threading.Timer? timer;
+
+    private string kName => "Kevin";
+    private string aName => "Axel";
+    private string jName => "Jakob";
+
+    protected override void OnInitialized()
+    {
+        timer = new System.Threading.Timer(_ =>
+        {
+            AnimateTypewriter();
+            InvokeAsync(StateHasChanged);
+        }, null, 0, 200);
+    }
+
+    private void AnimateTypewriter()
+    {
+        if (step == 0)
+        {
+            if (subStep < kName.Length)
+            {
+                kDisplay += kName[subStep];
+                subStep++;
+            }
+            else
+            {
+                step = 1;
+                subStep = 0;
+            }
+        }
+        else if (step == 1)
+        {
+            if (subStep < aName.Length)
+            {
+                aDisplay += aName[subStep];
+                subStep++;
+            }
+            else
+            {
+                step = 2;
+                subStep = 0;
+            }
+        }
+        else if (step == 2)
+        {
+            if (subStep < jName.Length)
+            {
+                jDisplay += jName[subStep];
+                subStep++;
+            }
+            else
+            {
+                // Reset alles voor een loop
+                step = 0;
+                subStep = 0;
+                kDisplay = "";
+                aDisplay = "";
+                jDisplay = "";
+            }
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
+
+<style>
+    .kaj-typewriter {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 10em;
+        user-select: none;
+        font-size: 2.2em;
+        font-weight: bold;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #229954;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    .kaj-typewriter-letter {
+        color: #145a32;
+        display: block;
+        transition: opacity 0.2s;
+    }
+</style>

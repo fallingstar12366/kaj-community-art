@@ -1,0 +1,155 @@
+﻿@page "/forestwallpaper"
+@rendermode InteractiveServer
+
+<button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
+    Wissel wallpaper
+</button>
+
+<div class="iphone18pro-wallpaper forest-theme">
+    <!-- Diepe bosachtergrond met subtiele mist -->
+    <div class="forest-bg"></div>
+    <!-- Zon met zachte gloed -->
+    <div class="forest-sun">
+        <img src="/Schermafbeelding 2025-07-18 223647.png" alt="Zon" />
+    </div>
+    <!-- Troon met lichte fade -->
+    <img src="/throne-background.svg" alt="Houten troon achtergrond" class="forest-throne" />
+    <!-- Foto's in een speelse grid met lichte schaduw -->
+    <div class="forest-photos">
+        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+    </div>
+    <div class="iphone18pro-content">
+        <h1 class="gambamark-title forest">Gambämark</h1>
+        <p>Geniet van je bos-thema achtergrond!</p>
+    </div>
+</div>
+
+@code {
+    int SelectedWallpaper = 0;
+    void ToggleWallpaper() {
+        SelectedWallpaper = SelectedWallpaper == 0 ? 1 : 0;
+    }
+}
+
+<style>
+.forest-theme {
+    background: none;
+    position: relative;
+}
+.forest-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #3a5d3c 0%, #1b2e1b 100%);
+    z-index: 0;
+    opacity: 0.95;
+}
+.forest-bg::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.12) 0%, transparent 70%), linear-gradient(180deg, transparent 60%, #0008 100%);
+    pointer-events: none;
+}
+.forest-sun {
+    position: absolute;
+    left: 50%; top: 70px;
+    transform: translateX(-50%);
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fffbe7 0%, #ffe066 60%, transparent 100%);
+    box-shadow: 0 0 80px 40px #fff7;
+    z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.85;
+}
+.forest-sun img {
+    width: 120px; height: 120px; object-fit: cover; border-radius: 50%; opacity: 0.7; filter: blur(2px) brightness(1.08);
+}
+.forest-throne {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0.88;
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    pointer-events: none;
+}
+.forest-photos {
+    position: absolute;
+    left: 0; right: 0; top: 260px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 12px;
+    justify-items: center;
+    z-index: 3;
+    padding: 0 24px;
+}
+.forest-photos img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px #0004, 0 1px 8px #fff2 inset;
+    border: 2px solid #eaeaea;
+    background: #f6f8fa;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background-blend-mode: lighten;
+}
+.forest-photos img:hover {
+    box-shadow: 0 12px 36px #0007, 0 2px 12px #fff4 inset;
+    transform: scale(1.04);
+    z-index: 10;
+}
+.gambamark-title.forest {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    background: linear-gradient(90deg, #eaff00 20%, #00fff7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 2px 32px #245c2a, 0 0 16px #fff, 0 0 2px #eaff00;
+    filter: brightness(1.13);
+    margin-bottom: 0.2em;
+    margin-top: 2.2em;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 2px solid #eaff00;
+    border-radius: 0 0 14px 14px;
+    padding-bottom: 0.18em;
+    background-blend-mode: lighten;
+}
+.iphone18pro-wallpaper {
+    width: 430px;
+    height: 932px;
+    border: 8px solid #222;
+    border-radius: 48px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: none;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iphone18pro-content {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    margin-top: 3em;
+    color: #fff;
+    text-shadow: 0 2px 8px #222;
+}
+</style>

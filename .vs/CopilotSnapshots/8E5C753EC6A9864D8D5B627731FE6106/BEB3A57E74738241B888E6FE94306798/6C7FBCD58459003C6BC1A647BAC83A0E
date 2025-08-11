@@ -1,0 +1,112 @@
+﻿@page "/"
+
+@rendermode InteractiveServer
+
+<div class="iphone18pro-wallpaper">
+    <div class="photo-gallery">
+        @foreach (var file in ScreenshotFiles)
+        {
+            <img src="/@file" alt="Screenshot" class="gallery-img responsive-img" />
+        }
+    </div>
+    <div class="vorjeans-box">
+        <span class="vorjeans-stripe-text">vörjeans</span>
+    </div>
+</div>
+
+@code {
+    // Voeg hier je schermafbeeldingen toe
+    List<string> ScreenshotFiles = new()
+    {
+        "IMG_3120.JPG",
+        "Schermafbeelding 2025-08-06 194813.png",
+        "Schermafbeelding 2025-08-06 194858.png",
+        "Schermafbeelding 2025-08-06 194920.png",
+        "Schermafbeelding 2025-08-06 194941.png"
+    };
+
+    public class PhotoInfo
+    {
+        public string FileName { get; set; } = "";
+        public int Width { get; set; } = 120;
+        public int Height { get; set; } = 180;
+        public string Widthpx => $"{Width}px";
+        public string Heightpx => $"{Height}px";
+    }
+}
+
+<style>
+    .iphone18pro-wallpaper {
+        width: 430px;
+        height: 932px;
+        border: 8px solid #222;
+        border-radius: 48px;
+        box-shadow: 0 0 32px rgba(0,0,0,0.2);
+        overflow: hidden;
+        background: repeating-linear-gradient( to right, #b22217 0px, #b22217 10px, #fff 10px, #fff 20px );
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .photo-gallery {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+        overflow-y: auto;
+        justify-content: center;
+        align-items: flex-start;
+        background: rgba(255,255,255,0.05);
+    }
+
+    .gallery-img {
+        border-radius: 24px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        background: #fff;
+        margin-bottom: 0.5rem;
+        max-width: 180px;
+        max-height: 320px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .gallery-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    .responsive-img {
+        width: 100%;
+        height: auto;
+        max-width: 180px;
+        max-height: 320px;
+    }
+
+    .vorjeans-box {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2566af;
+        border-radius: 16px;
+        padding: 0.5rem 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        display: inline-block;
+    }
+
+    .vorjeans-stripe-text {
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: 'Rock Salt', cursive;
+        color: #ffdd00;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        letter-spacing: 0.15em;
+    }
+</style>
+
