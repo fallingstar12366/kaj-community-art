@@ -14,15 +14,17 @@ Everything is free to view and download — all you need is a **free GitHub acco
 
 ## 💡 Contribute or Request Features
 
-Want to contribute or request something? You’re very welcome! You can:  
+Want to contribute or request something? You’re very welcome!  
+Check out the [Contributing Guide](CONTRIBUTING.md) for full details.
+
+You can:  
 - **Suggest new ideas** 💡  
-- **Request edits** to existing wallpapers 🎨 (e.g., different colors, text changes)  
-- **Ask for other KAJ-themed content** 🛠 (I’m a software developer and can create themes, icons, small apps, and more)  
+- **Request edits** to existing wallpapers 🎨  
+- **Ask for other KAJ-themed content** 🛠  
 
-Please reach out by:  
-- [Opening an Issue](../../issues) on GitHub *(requires account)*  
-- **OR** sending me a message on Discord: `lauraburger`
-
+To contact me:  
+- [Open an Issue](../../issues) here on GitHub *(requires account)*  
+- **OR** send me a message on Discord: `lauraburger`
 ---
 
 ## 🗂 Folder Structure
