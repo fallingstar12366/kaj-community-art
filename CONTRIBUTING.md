@@ -13,6 +13,15 @@ You can:
 - Ask for new types of KAJ-themed content (like icons, themes, small apps, etc.)
 
 ---
+Example issue you can copy and adapt:
+
+Title:
+Wallpaper idea: KAJ in the moonlight
+
+Description:
+I’d love a wallpaper showing KAJ under a full moon with a calm, blue color scheme.
+Could you add the text “Dream big” in elegant cursive in the bottom right corner?
+Here’s a sketch I made: [link]
 
 ## 🛠 How to Make a Request
 
