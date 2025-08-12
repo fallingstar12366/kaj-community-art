@@ -1,0 +1,81 @@
+<svg width="430" height="932" viewBox="0 0 430 932" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Achtergrond met verloop -->
+	<defs>
+		<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#23243a"/>
+			<stop offset="100%" stop-color="#181828"/>
+		</linearGradient>
+		<radialGradient id="floorGlow" cx="50%" cy="80%" r="70%">
+			<stop offset="0%" stop-color="#fff" stop-opacity="0.18"/>
+			<stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+		</radialGradient>
+		<linearGradient id="tileGrad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+			<stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+		</linearGradient>
+	</defs>
+	<rect width="430" height="932" fill="url(#bg)"/>
+	<!-- Discobal -->
+	<g>
+		<circle cx="215" cy="140" r="44" fill="#f8f8f8" stroke="#bbb" stroke-width="6"/>
+		<ellipse cx="205" cy="130" rx="14" ry="6" fill="#fff" fill-opacity="0.45"/>
+		<rect x="212" y="60" width="6" height="30" fill="#bbb"/>
+		<!-- Spiegelvlakjes -->
+		<rect x="200" y="120" width="8" height="8" fill="#fff" fill-opacity="0.7"/>
+		<rect x="220" y="150" width="8" height="8" fill="#fff" fill-opacity="0.5"/>
+		<rect x="210" y="170" width="8" height="8" fill="#fff" fill-opacity="0.6"/>
+		<rect x="225" y="180" width="8" height="8" fill="#fff" fill-opacity="0.4"/>
+		<rect x="205" y="180" width="8" height="8" fill="#fff" fill-opacity="0.5"/>
+	</g>
+	<!-- Lichtstralen -->
+	<g>
+		<polygon points="215,140 80,420 130,430" fill="#fff" fill-opacity="0.08"/>
+		<polygon points="215,140 350,420 300,430" fill="#fff" fill-opacity="0.08"/>
+		<polygon points="215,140 215,420 225,430" fill="#fff" fill-opacity="0.10"/>
+		<polygon points="215,140 215,420 205,430" fill="#fff" fill-opacity="0.10"/>
+	</g>
+	<!-- Dansvloer in perspectief: 4 rijen x 6 kolommen, grote glanzende tegels -->
+	<g>
+		<!-- Rij 1 (achteraan, breedst) -->
+		<g>
+			<polygon points="60,650 370,650 340,700 90,700" fill="#ff3b3b"/>
+			<polygon points="90,700 340,700 320,750 110,750" fill="#ffe53b"/>
+			<polygon points="110,750 320,750 305,800 125,800" fill="#3bff57"/>
+			<polygon points="125,800 305,800 295,850 135,850" fill="#3befff"/>
+		</g>
+		<!-- Tegelranden -->
+		<g stroke="#fff" stroke-opacity="0.18" stroke-width="2">
+			<polyline points="60,650 370,650"/>
+			<polyline points="90,700 340,700"/>
+			<polyline points="110,750 320,750"/>
+			<polyline points="125,800 305,800"/>
+			<polyline points="135,850 295,850"/>
+			<polyline points="60,650 90,700 110,750 125,800 135,850"/>
+			<polyline points="370,650 340,700 320,750 305,800 295,850"/>
+			<polyline points="215,650 215,700 215,750 215,800 215,850"/>
+			<polyline points="135,650 150,700 160,750 170,800 175,850"/>
+			<polyline points="295,650 280,700 270,750 260,800 255,850"/>
+		</g>
+		<!-- Glans op de vloer -->
+		<polygon points="60,650 370,650 295,850 135,850" fill="url(#floorGlow)"/>
+		<!-- Extra glans op tegels -->
+		<polygon points="60,650 370,650 340,700 90,700" fill="url(#tileGrad)"/>
+		<polygon points="90,700 340,700 320,750 110,750" fill="url(#tileGrad)"/>
+		<polygon points="110,750 320,750 305,800 125,800" fill="url(#tileGrad)"/>
+		<polygon points="125,800 305,800 295,850 135,850" fill="url(#tileGrad)"/>
+	</g>
+	<!-- Dansende silhouetten -->
+	<g>
+		<ellipse cx="140" cy="870" rx="22" ry="10" fill="#000" fill-opacity="0.25"/>
+		<path d="M140 860 Q135 845 145 845 Q155 845 150 860 Z" fill="#222"/>
+		<circle cx="145" cy="840" r="10" fill="#222"/>
+		<ellipse cx="215" cy="880" rx="20" ry="8" fill="#000" fill-opacity="0.22"/>
+		<rect x="210" y="850" width="10" height="25" rx="5" fill="#222"/>
+		<circle cx="215" cy="845" r="8" fill="#222"/>
+		<ellipse cx="290" cy="870" rx="18" ry="7" fill="#000" fill-opacity="0.22"/>
+		<rect x="285" y="850" width="8" height="20" rx="4" fill="#222"/>
+		<circle cx="289" cy="845" r="7" fill="#222"/>
+	</g>
+	<!-- Titel -->
+	<text x="215" y="240" text-anchor="middle" font-size="2.2rem" font-family="Segoe UI, Arial, sans-serif" fill="#fff" style="letter-spacing:0.08em; text-shadow: 0 2px 12px #000;">Dansvloer</text>
+</svg>

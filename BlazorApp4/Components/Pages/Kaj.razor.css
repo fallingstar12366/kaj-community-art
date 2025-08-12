@@ -1,0 +1,77 @@
+@keyframes accordionArcK {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    20% {
+        transform: translate(-20px, 30px) rotate(-18deg) scale(1.08);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    70% {
+        transform: translate(-8px, -10px) rotate(8deg) scale(0.97);
+    }
+
+    80% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes accordionArcJ {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    20% {
+        transform: translate(20px, 30px) rotate(18deg) scale(1.08);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    70% {
+        transform: translate(8px, -10px) rotate(-8deg) scale(0.97);
+    }
+
+    80% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+.Kaj-accordion-svg .Kaj-accordion-k {
+    animation: accordionArcK 2.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+    display: inline-block;
+    transform-origin: 100% 0%;
+    /* Kleine random delay voor een speels effect */
+    animation-delay: 0s;
+}
+
+.Kaj-accordion-svg .Kaj-accordion-j {
+    animation: accordionArcJ 2.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+    display: inline-block;
+    transform-origin: 0% 0%;
+    /* Soms een kleine delay zodat ze niet altijd gelijk lopen */
+    animation-delay: 0.18s;
+}
+
+.Kaj-accordion-svg .Kaj-accordion-a {
+    animation: none;
+}
+body, .Kaj-spotlight-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.Kaj-accordion-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
