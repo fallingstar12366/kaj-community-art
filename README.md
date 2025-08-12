@@ -16,7 +16,7 @@ This repository hosts my collection of KAJ-themed wallpapers and other creative 
 
 ## 💡 Contribute, Share Ideas, or Make Requests  
 Everyone is welcome to participate! You can suggest new ideas, share your own KAJ-themed creations, or make requests.  
-Check the **Contributing Guide** for full details.  
+Check the **[Contributing Guide](https://github.com/fallingstar12366/kaj-community-art/blob/master/CONTRIBUTING.md)** for full details.  
 
 **You can:**  
 - 💡 Suggest new ideas  
