@@ -40,3 +40,10 @@ Thumbs.db
 # Others
 *.db
 *.sqlite
+/BlazorApp4/bin/Debug/net9.0/BlazorApp4.dll
+/BlazorApp4/bin/Debug/net9.0/BlazorApp4.exe
+/BlazorApp4/bin/Debug/net9.0/BlazorApp4.pdb
+/BlazorApp4/bin/Debug/net9.0/BlazorApp4.staticwebassets.endpoints.json
+/BlazorApp4/bin/Debug/net9.0/BlazorApp4.staticwebassets.runtime.json
+/BlazorApp4/obj/Debug/net9.0/ref/BlazorApp4.dll
+/BlazorApp4/obj/Debug/net9.0/refint/BlazorApp4.dll
