@@ -10,8 +10,9 @@ Whether you want to share ideas, suggest changes, or request something completel
 You can:
 
 - Suggest new wallpaper ideas  
-- Request changes to existing content (e.g., colors, text, layout)  
-- Ask for new types of KAJ-themed content (like icons, themes, small apps, etc.)
+- Request changes to existing content (e.g., colors, text, layout)
+- Ask if your own artwork can be shown (it will be visible to everyone)  
+- Ask for new types of KAJ-themed content (like icons, themes, etc.)
 
 ---
 
