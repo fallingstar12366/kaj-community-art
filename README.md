@@ -1,45 +1,44 @@
 # 🎨 KAJ Collection
 
-> **Note:** Anything you share here will be publicly available to everyone.
+> **Note:** Anything you share here is public and visible to everyone.
 
 **Welcome!**  
-This repository hosts my collection of KAJ-themed wallpapers and other fun KAJ-related creations.  
-**The entire collection is public — everyone can view and download it for free.**  
-No GitHub account is needed just to browse or download.  
+This repository hosts my collection of KAJ-themed wallpapers and other creative KAJ-related projects.  
+**The entire collection is free and public** — anyone can view and download it without a GitHub account.  
 
 ---
 
 ## 📥 How to Download  
-1. Download individual images directly from the **`https://github.com/fallingstar12366/kaj-community-art/tree/master/BlazorApp4/wwwroot/Wallpapers`** folder.  
+1. View and download individual images directly from the **[![View Wallpapers](https://github.com/fallingstar12366/kaj-community-art/tree/master/BlazorApp4/wwwroot/Wallpapers)** folder.  
 2. To download multiple files or the entire collection, click the green **Code** button and select **Download ZIP**.  
 
 ---
 
-## 💡 How to Contribute, Share Ideas, or Request Features  
-You’re very welcome to contribute, request something, **share your own KAJ-themed creations**, or suggest new ideas!  
-Check out the **Contributing Guide** for full details.  
+## 💡 Contribute, Share Ideas, or Make Requests  
+Everyone is welcome to participate! You can suggest new ideas, share your own KAJ-themed creations, or make requests.  
+Check the **Contributing Guide** for full details.  
 
 **You can:**  
-- Suggest new ideas 💡  
-- Share your own KAJ-themed creations *(publicly visible in this repository)* 🖌  
-- Request edits to existing wallpapers 🎨  
-- Ask for other KAJ-themed content 🛠  
+- 💡 Suggest new ideas  
+- 🖌 Share your own KAJ-themed creations *(publicly visible in this repo)*  
+- 🎨 Request edits to existing wallpapers  
+- 🛠 Ask for other KAJ-related content  
 
-**Contact me:**  
-- Open an *Issue* on GitHub (requires account)  
+**Contact:**  
+- Open an *Issue* on GitHub *(GitHub account required)*  
 - Send me a message on Discord: **lauraburger**  
 
 ---
 
 ## 🗂 Folder Structure  
 - **`/Wallpapers`** — KAJ wallpapers in various resolutions  
-- **`/Icons`** — KAJ-inspired icons *(under construction)*  
+- **`/Icons`** — KAJ-inspired icons *(in progress)*  
 
 ---
 
-## ❤️ Support  
-If you enjoy this project, your support means a lot!  
-Let’s build the ultimate KAJ collection **together** — and your ideas are always welcome.  
+## ❤️ Support the Project  
+Enjoying this project? Your support means a lot!  
+Together we can build the ultimate KAJ collection — your ideas are always welcome.  
 
 Need help or have questions?  
-📩 Contact me on Discord or open an Issue!
+📩 Contact me on Discord or open an Issue.
