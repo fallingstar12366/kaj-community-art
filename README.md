@@ -9,7 +9,7 @@ This repository hosts my collection of KAJ-themed wallpapers and other creative 
 ---
 
 ## 📥 How to Download  
-1. View and download individual images directly from the **[![View Wallpapers](https://github.com/fallingstar12366/kaj-community-art/tree/master/BlazorApp4/wwwroot/Wallpapers)** folder.  
+1. View and download individual images directly from the **[View Wallpapers](https://github.com/fallingstar12366/kaj-community-art/tree/master/BlazorApp4/wwwroot/Wallpapers)** folder.  
 2. To download multiple files or the entire collection, click the green **Code** button and select **Download ZIP**.  
 
 ---
