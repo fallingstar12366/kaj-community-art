@@ -5,6 +5,56 @@
 <button @onclick="ToggleWallpaper" style="position:absolute;top:12px;right:12px;z-index:30;">
     Wissel wallpaper
 </button>
+<!-- Apple Watch 7 45mm: rood-witte achtergrond, twee grote cirkelfoto's diagonaal, compacte blauwe vorjeans-balk zonder gloss -->
+<div class="apple-watch-screen-only right">
+    <svg viewBox="0 0 128 168" width="128" height="168" aria-label="Apple Watch 7 45mm Screen">
+        <defs>
+            <clipPath id="watchScreenClipOnly">
+                <rect x="0" y="0" width="128" height="168" rx="36" />
+            </clipPath>
+            <pattern id="redWhiteStripes" patternUnits="userSpaceOnUse" width="20" height="20">
+                <rect x="0" y="0" width="10" height="20" fill="#b22217" />
+                <rect x="10" y="0" width="10" height="20" fill="#fff" />
+            </pattern>
+            <!-- Cirkelvormige maskers voor de foto's -->
+            <clipPath id="circle1">
+                <circle cx="38" cy="44" r="34" />
+            </clipPath>
+            <clipPath id="circle2">
+                <circle cx="90" cy="100" r="32" />
+            </clipPath>
+            <!-- Schaduw voor de foto's -->
+            <filter id="photoShadow" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#222" flood-opacity="0.22" />
+            </filter>
+            <!-- Glow effect voor extra diepte -->
+            <filter id="photoGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#fff" flood-opacity="0.15" />
+            </filter>
+        </defs>
+        <!-- Rood-witte achtergrond -->
+        <rect x="0" y="0" width="128" height="168" rx="36" fill="url(#redWhiteStripes)" clip-path="url(#watchScreenClipOnly)" />
+        <!-- Twee grote foto's als cirkels diagonaal met schaduw en glow -->
+        <g filter="url(#photoShadow)">
+            <image href="/vörjeans/vörjeans8.png" x="4" y="10" width="68" height="68"
+                   opacity="0.98" clip-path="url(#circle1)" filter="url(#photoGlow)" style="transition: opacity 0.3s;" />
+            <image href="/vörjeans/vörjeans3.png" x="58" y="68" width="64" height="64"
+                   opacity="0.97" clip-path="url(#circle2)" filter="url(#photoGlow)" style="transition: opacity 0.3s;" />
+        </g>
+        <!-- Compacte blauwe balk met vorjeans-titel, tekst nu perfect verticaal gecentreerd -->
+        <rect x="20" y="132" width="88" height="22" rx="8"
+              fill="#2566afcc" stroke="#2566af" stroke-width="1" />
+        <text x="64" y="143" text-anchor="middle" dominant-baseline="middle"
+              font-family="'Rock Salt', cursive" font-size="13" font-weight="800"
+              fill="#ffdd00" stroke="#222" stroke-width="0.6" paint-order="stroke"
+              style="letter-spacing:0.13em;">
+            vörjeans
+        </text>
+        <!-- Rand van het horloge -->
+        <rect x="0" y="0" width="128" height="168" rx="36" fill="none" stroke="#222" stroke-width="2" />
+    </svg>
+    <div class="apple-watch-label">Apple Watch 7<br />45mm Screen</div>
+</div>
 
 <!--
 Hoofdcontainer die het uiterlijk van een iPhone nabootst.
@@ -15,8 +65,8 @@ Hoofdcontainer die het uiterlijk van een iPhone nabootst.
     {
         <div class="clock-blur-container">
             <div class="clock-bg-row">
-                <img src="/Screenshot 2025-08-07 095428.png" alt="Clock Background 1" class="clock-bg" />
-                <img src="/Schermafbeelding 2025-08-06 194813.png" alt="Clock Background 2" class="clock-bg" />
+                <img src="/vörjeans/vörjeans9.png" alt="Clock Background 1" class="clock-bg" />
+                <img src="/vörjeans/vörjeans1.png" alt="Clock Background 2" class="clock-bg" />
             </div>
             <div class="clock-blur"></div>
         </div>
@@ -39,7 +89,7 @@ Hoofdcontainer die het uiterlijk van een iPhone nabootst.
         {
             var angle = (i % 5 - 2) * 8;
             var scale = 1.0 + (i % 4) * 0.07;
-            var isWide = ScreenshotFiles[i] == "Schermafbeelding 2025-08-06 210139.png";
+            var isWide = ScreenshotFiles[i] == "vörjeans/vörjeans6.png";
             var isBig = ScreenshotFiles[i] == "Schermafbeelding 2025-08-06 214454.png";
             var w = isBig ? 400 : (isWide ? 320 : 100);
             var h = 140;
@@ -71,13 +121,13 @@ Hoofdcontainer die het uiterlijk van een iPhone nabootst.
     // Lijst met bestandsnamen van de afbeeldingen in de collage
     List<string> ScreenshotFiles = new()
     {
-        "Schermafbeelding 2025-08-06 211023.png",
-        "Schermafbeelding 2025-08-06 214454.png", // Deze wordt extra breed getoond
-        "Screenshot 2025-08-07 085811.png",
-        "Schermafbeelding 2025-08-06 210139.png", // Deze wordt breed getoond
-        "Schermafbeelding 2025-08-06 194920.png",
-        "Schermafbeelding 2025-08-06 194941.png",
-        "Schermafbeelding 2025-08-06 200811.png"
+        "vörjeans/vörjeans7.png",
+        "vörjeans/vörjeans8.png", // Deze wordt extra breed getoond
+        "vörjeans/vörjeans10.png",
+        "vörjeans/vörjeans6.png", // Deze wordt breed getoond
+        "vörjeans/vörjeans3.png",
+        "vörjeans/vörjeans4.png",
+        "vörjeans/vörjeans5.png"
     };
 
     // (Optioneel, nu niet gebruikt) Structuur voor extra foto-informatie
@@ -209,5 +259,26 @@ Hoofdcontainer die het uiterlijk van een iPhone nabootst.
         color: #ffdd00;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         letter-spacing: 0.15em;
+    }
+
+    .apple-watch-screen-only {
+        position: fixed;
+        right: 32px;
+        top: 50px;
+        z-index: 100;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .apple-watch-label {
+        font-size: 1.1rem;
+        color: #222;
+        font-weight: 600;
+        margin-top: 0.3em;
+        text-align: right;
+        letter-spacing: 0.04em;
+        text-shadow: 0 1px 4px #fff8;
     }
 </style>

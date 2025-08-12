@@ -13,39 +13,101 @@
 
     <!-- SVG houten troon-achtergrond met fade -->
     <div style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;">
-       <img src="/throne-background.svg" alt="Houten troon achtergrond" style="width:100%;height:100%;object-fit:cover;opacity:0.82;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);" />
+        <img src="/Gambamark/throne-background.svg" alt="Houten troon achtergrond" style="width:100%;height:100%;object-fit:cover;opacity:0.82;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);" />
 @*      <img src="/throne-background.svg" alt="Houten troon achtergrond" style="width:100%;height:100%;object-fit:cover;opacity:0.82;" />
  *@
 
     </div>
     <!-- Decoratieve foto's als luxe polaroids -->
     <div class="photo-polaroid premium" style="left:24px;top:120px;transform:rotate(-5deg);">
-        <img src="/Schermafbeelding 2025-08-08 154829.png" alt="Decoratieve foto 1" />
+        <img src="/Gambamark/Gambamark2.png" alt="Decoratieve foto 1" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="photo-polaroid premium" style="right:32px;top:180px;transform:rotate(4deg);">
-        <img src="/Schermafbeelding 2025-08-08 154652.png" alt="Decoratieve foto 2" />
+        <img src="/Gambamark/Gambamark1.png" alt="Decoratieve foto 2" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="photo-polaroid premium" style="left:110px;top:340px;transform:rotate(-2deg);">
-        <img src="/Schermafbeelding 2025-08-08 140757.png" alt="Decoratieve foto 3" />
+        <img src="/Gambamark/Gambamark.png" alt="Decoratieve foto 3" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="photo-polaroid premium" style="right:40px;top:500px;transform:rotate(3deg);">
-        <img src="/Schermafbeelding 2025-08-08 160212.png" alt="Decoratieve foto 4" />
+        <img src="/Gambamark/Gambamark6.png" alt="Decoratieve foto 4" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="photo-polaroid premium" style="left:40px;top:600px;transform:rotate(-3deg);">
-        <img src="/Schermafbeelding 2025-08-08 155252.png" alt="Decoratieve foto 5" />
+        <img src="/Gambamark/Gambamark4.png" alt="Decoratieve foto 5" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="photo-polaroid premium" style="right:60px;top:700px;transform:rotate(1deg);">
-        <img src="/Schermafbeelding 2025-08-08 155209.png" alt="Decoratieve foto 6" />
+        <img src="/Gambamark/Gambamark3.png" alt="Decoratieve foto 6" />
         <div class="polaroid-gloss"></div>
     </div>
     <div class="iphone18pro-content">
         <h1 class="gambamark-title premium">Gambämark</h1>
     </div>
+</div>
+
+<div class="apple-watch-42-face">
+    <svg viewBox="0 0 126 157" width="126" height="157" aria-label="Apple Watch 42mm">
+        <defs>
+            <clipPath id="watch42ScreenClip">
+                <rect x="0" y="0" width="126" height="157" rx="32" />
+            </clipPath>
+            <filter id="watch42Shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.18" />
+            </filter>
+            <filter id="photoGlow42" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+            <!-- Fade mask for background, similar to iPhone -->
+            <linearGradient id="watchBgFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="80%" stop-color="white" stop-opacity="1" />
+                <stop offset="100%" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+            <mask id="watchBgMask">
+                <rect x="0" y="0" width="126" height="157" fill="url(#watchBgFade)" />
+            </mask>
+            <!-- ClipPaths -->
+            <clipPath id="circle1"><circle cx="32" cy="38" r="22" /></clipPath>
+            <clipPath id="circle2"><circle cx="94" cy="38" r="22" /></clipPath>
+            <clipPath id="circle3"><circle cx="32" cy="86" r="22" /></clipPath>
+            <clipPath id="circle4"><circle cx="94" cy="86" r="22" /></clipPath>
+
+        </defs>
+        <!-- Forest wallpaper background with fade mask -->
+        <g clip-path="url(#watch42ScreenClip)">
+            <rect x="0" y="0" width="126" height="157" fill="#fff" />
+            <image href="/Gambamark/throne-background.svg"
+                   x="-87" y="0" width="300" height="157"
+                   preserveAspectRatio="xMidYMid slice" opacity="0.82"
+                   mask="url(#watchBgMask)" />
+        </g>
+        <!-- Images -->
+        <image href="/Gambamark/Gambamark7.png" x="10" y="16" width="44" height="44" clip-path="url(#circle1)" />
+        <image href="/Gambamark/Gambamark1.png" x="72" y="16" width="44" height="44" clip-path="url(#circle2)" />
+        <image href="/Gambamark/Gambamark.png" x="10" y="64" width="44" height="44" clip-path="url(#circle3)" />
+        <image href="/Gambamark/Gambamark5.png" x="72" y="64" width="44" height="44" clip-path="url(#circle4)" />
+        <!-- Blue label with green text -->
+        <g>
+            <text x="63" y="135" text-anchor="middle" dominant-baseline="middle"
+                  font-family="'Merriweather', 'Georgia', serif" font-size="13" font-weight="800"
+                  fill="#42B16D" stroke="#245c2a" stroke-width="0.6" paint-order="stroke"
+                  style="letter-spacing:0.13em;">
+                Gambämark
+            </text>
+        </g>
+        <!-- Watch body rand en schaduw -->
+        <rect x="0" y="0" width="126" height="157" rx="32"
+              fill="none" stroke="#222" stroke-width="4" filter="url(#watch42Shadow)" />
+        <!-- Subtiele rand -->
+        <rect x="2" y="2" width="122" height="153" rx="30" fill="none" stroke="#fff4" stroke-width="2" />
+    </svg>
+    <div class="apple-watch-label">Apple Watch 42mm</div>
 </div>
 
 @code {
@@ -174,4 +236,21 @@
     z-index: 3;
     pointer-events: none;
 }
+
+    .apple-watch-42-face {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+        margin-top: 12px;
+    }
+
+    .apple-watch-label {
+        font-size: 1rem;
+        color: #888;
+        text-align: center;
+        margin-top: 4px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        letter-spacing: 0.04em;
+    }
 </style>
