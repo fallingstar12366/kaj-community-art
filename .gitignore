@@ -40,3 +40,8 @@ Thumbs.db
 # Others
 *.db
 *.sqlite
+/BlazorApp4/obj/Debug/net9.0/compressed/5jhbgl1r20-yxucmsfgyx.gz
+/BlazorApp4/obj/Debug/net9.0/compressed/gzlzdcaf3p-yxucmsfgyx.gz
+/BlazorApp4/obj/Debug/net9.0/scopedcss/bundle/BlazorApp4.styles.css
+/BlazorApp4/obj/Debug/net9.0/scopedcss/Components/Pages/KajSpotlightWallpaper.razor.rz.scp.css
+/BlazorApp4/obj/Debug/net9.0/scopedcss/projectbundle/BlazorApp4.bundle.scp.css
