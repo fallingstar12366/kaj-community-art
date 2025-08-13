@@ -1,4 +1,4 @@
-@keyframes accordionArcK {
+/*@keyframes accordionArcK {
     0%, 100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
     }
@@ -45,17 +45,17 @@
 .Kaj-accordion-svg .Kaj-accordion-k {
     animation: accordionArcK 2.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
     display: inline-block;
-    transform-origin: 100% 0%;
+    transform-origin: 100% 0%;*/
     /* Kleine random delay voor een speels effect */
-    animation-delay: 0s;
+    /*animation-delay: 0s;
 }
 
 .Kaj-accordion-svg .Kaj-accordion-j {
     animation: accordionArcJ 2.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
     display: inline-block;
-    transform-origin: 0% 0%;
+    transform-origin: 0% 0%;*/
     /* Soms een kleine delay zodat ze niet altijd gelijk lopen */
-    animation-delay: 0.18s;
+    /*animation-delay: 0.18s;
 }
 
 .Kaj-accordion-svg .Kaj-accordion-a {
@@ -74,4 +74,562 @@ body, .Kaj-spotlight-center {
     justify-content: center;
     align-items: center;
     width: 100%;
+}*/
+
+.kaj-swim {
+    display: inline-block;
+    will-change: transform;
+    letter-spacing: -0.18em;
 }
+
+/* J vertrekt als eerste, komt als laatste terug */
+.kaj-swim-j {
+    animation: kaj-swim-j 4.5s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+    animation-delay: 0s;
+}
+/* A vertrekt na J, komt na K terug */
+.kaj-swim-a {
+    animation: kaj-swim-a 4.5s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+    animation-delay: 0.2s;
+}
+/* K vertrekt als laatste, komt als eerste terug */
+.kaj-swim-k {
+    animation: kaj-swim-k 4.5s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+    animation-delay: 0.4s;
+}
+
+/* J: pauze aan het begin én eind */
+@keyframes kaj-swim-j {
+    0% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    7% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    15% {
+        transform: translate(20px, -10px) rotate(-8deg) scale(1.05);
+    }
+
+    23% {
+        transform: translate(60px, 20px) rotate(12deg) scale(1.12);
+    }
+
+    31% {
+        transform: translate(120px, 0px) rotate(-10deg) scale(1.18);
+    }
+
+    39% {
+        transform: translate(200px, 30px) rotate(16deg) scale(1.22);
+    }
+
+    47% {
+        transform: translate(300px, -20px) rotate(-12deg) scale(1.15);
+    }
+
+    55% {
+        transform: translate(400px, 40px) rotate(10deg) scale(1.1);
+    }
+
+    63% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    77% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    85% {
+        transform: translate(400px, 40px) rotate(10deg) scale(1.1);
+    }
+
+    91% {
+        transform: translate(300px, -20px) rotate(-12deg) scale(1.15);
+    }
+
+    96% {
+        transform: translate(20px, -10px) rotate(-8deg) scale(1.05);
+    }
+
+    98% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+}
+
+/* A: pauze aan het begin én eind */
+@keyframes kaj-swim-a {
+    0% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    7% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    15% {
+        transform: translate(10px, -5px) rotate(6deg) scale(1.03);
+    }
+
+    23% {
+        transform: translate(40px, 10px) rotate(-8deg) scale(1.08);
+    }
+
+    31% {
+        transform: translate(100px, 0px) rotate(10deg) scale(1.13);
+    }
+
+    39% {
+        transform: translate(180px, 20px) rotate(-12deg) scale(1.18);
+    }
+
+    47% {
+        transform: translate(260px, -10px) rotate(12deg) scale(1.15);
+    }
+
+    55% {
+        transform: translate(340px, 30px) rotate(-10deg) scale(1.1);
+    }
+
+    63% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    72% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    80% {
+        transform: translate(340px, 30px) rotate(-10deg) scale(1.1);
+    }
+
+    87% {
+        transform: translate(180px, 20px) rotate(-12deg) scale(1.18);
+    }
+
+    94% {
+        transform: translate(40px, 10px) rotate(-8deg) scale(1.08);
+    }
+
+    97% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+}
+
+/* K: pauze aan het begin én eind */
+@keyframes kaj-swim-k {
+    0% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    7% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    15% {
+        transform: translate(5px, -2px) rotate(-4deg) scale(1.01);
+    }
+
+    23% {
+        transform: translate(20px, 5px) rotate(6deg) scale(1.04);
+    }
+
+    31% {
+        transform: translate(60px, 0px) rotate(-8deg) scale(1.08);
+    }
+
+    39% {
+        transform: translate(120px, 10px) rotate(10deg) scale(1.12);
+    }
+
+    47% {
+        transform: translate(200px, -5px) rotate(-12deg) scale(1.15);
+    }
+
+    55% {
+        transform: translate(300px, 20px) rotate(8deg) scale(1.1);
+    }
+
+    63% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    67% {
+        transform: translate(500px, 80px) rotate(0deg) scale(1.1);
+    }
+
+    75% {
+        transform: translate(300px, 20px) rotate(8deg) scale(1.1);
+    }
+
+    83% {
+        transform: translate(120px, 10px) rotate(10deg) scale(1.12);
+    }
+
+    91% {
+        transform: translate(20px, 5px) rotate(6deg) scale(1.04);
+    }
+
+    97% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+
+}
+.kaj-sea-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background: linear-gradient(to top, #3ec6e0 0%, #b3e0f7 100%);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.kaj-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 160px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.kaj-wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50%;
+    background: url('data:image/svg+xml;utf8,<svg width="1440" height="160" viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 80C120 120 360 0 720 80C1080 160 1320 40 1440 80V160H0V80Z" fill="%23fff" fill-opacity="0.5"/></svg>') repeat-x;
+    animation: kaj-wave-move 8s linear infinite;
+    opacity: 0.7;
+}
+
+    .kaj-wave.wave2 {
+        top: 20px;
+        opacity: 0.5;
+        animation-duration: 12s;
+        filter: blur(2px);
+    }
+
+    .kaj-wave.wave3 {
+        top: 40px;
+        opacity: 0.3;
+        animation-duration: 16s;
+        filter: blur(4px);
+    }
+
+@keyframes kaj-wave-move {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 720px;
+    }
+}
+.kaj-letters-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 7vw;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    color: #fff;
+    text-shadow: 0 4px 16px #1a6a8b, 0 1px 0 #3ec6e0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+.kaj-outofview-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 2.5vw;
+    color: #fff;
+    background: rgba(30, 106, 139, 0.7);
+    padding: 0.5em 1.5em;
+    border-radius: 1em;
+    box-shadow: 0 2px 12px #1a6a8b55;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+/*.popetje {
+    position: relative;
+    width: 120px;
+    height: 260px;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popetje-head {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #ffe0b3;
+    border: 3px solid #b97a56;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: -18px;*/ /* overlap met body */
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.eye {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+.eye-left {
+    margin-right: 6px;
+}
+
+.eye-right {
+    margin-left: 6px;
+}*/
+
+/* Blauwe ogen */
+/*.eyeball {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle at 60% 40%, #4fc3f7 60%, #1565c0 100%);
+    border-radius: 50%;
+    z-index: 2;
+    animation: eyeball-move 3s infinite;
+}
+
+@keyframes eyeball-move {
+    0%, 100% {
+        left: 7px;
+        top: 7px;
+    }
+
+    20% {
+        left: 11px;
+        top: 9px;
+    }
+
+    40% {
+        left: 3px;
+        top: 5px;
+    }
+
+    60% {
+        left: 7px;
+        top: 11px;
+    }
+
+    80% {
+        left: 9px;
+        top: 7px;
+    }
+}
+
+.eyelid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 3;
+    animation: blink 4s infinite;
+    transform-origin: top center;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+@keyframes blink {
+    0%, 92%, 100% {
+        height: 0;
+    }
+
+    95% {
+        height: 28px;
+    }
+
+    97% {
+        height: 0;
+    }
+}
+
+.popetje-body {
+    position: relative;
+    width: 44px;
+    height: 80px;
+    background: #b3d1ff;
+    border-radius: 20px;
+    border: 3px solid #6a8bb9;
+    z-index: 1;
+}
+
+.popetje-arm {
+    position: absolute;
+    width: 18px;
+    height: 60px;
+    background: #ffe0b3;
+    border: 3px solid #b97a56;
+    border-radius: 18px;
+    top: 70px;*/ /* iets verder naar beneden */
+    /*z-index: 0;
+}
+
+    .popetje-arm.left {
+        left: 28px;*/ /* nog verder naar binnen */
+        /*right: auto;
+        transform: rotate(35deg);
+        transform-origin: top left;
+    }
+
+    .popetje-arm.right {
+        right: 28px;*/ /* nog verder naar binnen */
+        /*left: auto;
+        transform: rotate(-35deg);
+        transform-origin: top right;
+    }
+
+.popetje-leg {
+    position: absolute;
+    width: 16px;
+    height: 60px;
+    background: #ffe0b3;
+    border: 3px solid #b97a56;
+    border-radius: 16px;
+    top: 129px;*/ /* omhoog (was 142px) */
+    /*z-index: 0;
+}
+
+    .popetje-leg.left {
+        left: 30px;*/ /* meer naar binnen (was 21px) */
+        /*right: auto;
+        transform: rotate(10deg);
+        transform-origin: top left;
+    }
+
+    .popetje-leg.right {
+        right: 30px;*/ /* meer naar binnen (was 21px) */
+        /*left: auto;
+        transform: rotate(-10deg);
+        transform-origin: top right;
+    }
+@keyframes fitness-arm-left {
+    0%, 100% {
+        transform: rotate(35deg);
+    }
+
+    20% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(160deg);
+    }
+
+    80% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes fitness-arm-right {
+    0%, 100% {
+        transform: rotate(-35deg);
+    }
+
+    20% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: rotate(-160deg);
+    }
+
+    80% {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes fitness-leg-left {
+    0%, 100% {
+        transform: rotate(10deg);
+    }
+
+    20% {
+        transform: rotate(40deg);
+    }
+
+    50% {
+        transform: rotate(60deg);
+    }
+
+    80% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes fitness-leg-right {
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+
+    20% {
+        transform: rotate(-40deg);
+    }
+
+    50% {
+        transform: rotate(-60deg);
+    }
+
+    80% {
+        transform: rotate(-40deg);
+    }
+}
+
+.popetje-arm.left.fitness {
+    animation: fitness-arm-left 1.2s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+}
+
+.popetje-arm.right.fitness {
+    animation: fitness-arm-right 1.2s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+}
+
+.popetje-leg.left.fitness {
+    animation: fitness-leg-left 1.2s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+}
+
+.popetje-leg.right.fitness {
+    animation: fitness-leg-right 1.2s cubic-bezier(.68,-0.6,.32,1.6) infinite;
+}*/
+

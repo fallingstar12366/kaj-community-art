@@ -1,7 +1,24 @@
 @page "/kajspotlight"
 @rendermode InteractiveServer
+@* <div class="popetje">
+    <div class="popetje-head">
+        <div class="eye eye-left">
+            <div class="eyeball"></div>
+            <div class="eyelid"></div>
+        </div>
+        <div class="eye eye-right">
+            <div class="eyeball"></div>
+            <div class="eyelid"></div>
+        </div>
+    </div>
+    <div class="popetje-body"></div>
+    <div class="popetje-arm left fitness"></div>
+    <div class="popetje-arm right fitness"></div>
+    <div class="popetje-leg left fitness"></div>
+    <div class="popetje-leg right fitness"></div>
+</div> *@
 
-<div class="Kaj-spotlight-center">
+@* <div class="Kaj-spotlight-center">
     <span class="Kaj-accordion-svg">
         <svg width="240" height="400" viewBox="0 0 400 400" fill="none" aria-label="KAJ">
             <text class="Kaj-accordion-k" x="55" y="80" font-size="72" font-family="Arial Black, Arial, sans-serif" fill="#b97a56">K</text>
@@ -9,4 +26,55 @@
             <text class="Kaj-accordion-j" x="165" y="80" font-size="72" font-family="Arial Black, Arial, sans-serif" fill="#b97a56">J</text>
         </svg>
     </span>
+</div> *@
+<div class="kaj-sea-bg">
+    <div class="kaj-waves">
+        <div class="kaj-wave"></div>
+        <div class="kaj-wave wave2"></div>
+        <div class="kaj-wave wave3"></div>
+    </div>
 </div>
+
+<div class="kaj-sea-bg">
+    <div class="kaj-waves">
+        <div class="kaj-wave"></div>
+        <div class="kaj-wave wave2"></div>
+        <div class="kaj-wave wave3"></div>
+    </div>
+</div>
+
+@if (ShowOutOfViewText)
+{
+    <div class="kaj-outofview-text">
+        Du simmar ur bild kaj!<br />
+        <span style="font-size:0.8em;opacity:0.8;">You're swimming out of the picture, Kaj!</span>
+    </div>
+}
+
+<div class="kaj-letters-container">
+    <span class="kaj-swim kaj-swim-k">K</span>
+    <span class="kaj-swim kaj-swim-a">A</span>
+    <span class="kaj-swim kaj-swim-j">J</span>
+</div>
+@code {
+    private double animationProgress = 0;
+    private System.Timers.Timer? timer;
+    private bool ShowOutOfViewText => animationProgress > 0.63 && animationProgress < 0.80;
+    protected override void OnInitialized()
+    {
+        timer = new System.Timers.Timer(30);
+        timer.Elapsed += (s, e) =>
+        {
+            // 4.5s animatie, sync progress met tijd
+            var ms = DateTime.Now.TimeOfDay.TotalMilliseconds % 4500;
+            animationProgress = ms / 4500.0;
+            InvokeAsync(StateHasChanged);
+        };
+        timer.Start();
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
