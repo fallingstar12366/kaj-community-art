@@ -59,7 +59,7 @@
 @code {
     private double animationProgress = 0;
     private System.Timers.Timer? timer;
-    private bool ShowOutOfViewText => animationProgress > 0.63 && animationProgress < 0.80;
+    private bool ShowOutOfViewText => animationProgress > 0.63 && animationProgress < 0.70;
     protected override void OnInitialized()
     {
         timer = new System.Timers.Timer(30);

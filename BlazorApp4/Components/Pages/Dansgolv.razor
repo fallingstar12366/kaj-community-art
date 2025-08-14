@@ -8,15 +8,18 @@
 </button>
 
 <div class="iphone18pro-wallpaper">
-    <img src="/dansgolv/dansgolv background.png" alt="Dansvloer" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <div class="dansgolv-title">Dansgolv</div>
+    <img src="/dansgolv/dansgolv4.png" alt="Dansgolv Bidden" class="dansgolv-foto-bidden" />
+    <div class="dansgolv-fotos">
+        <img src="/dansgolv/dansgolv1.png" alt="Dansgolv 1" class="dansgolv-foto left" />
+        <img src="/dansgolv/dansgolv2.png" alt="Dansgolv 2" class="dansgolv-foto right" />
+    </div>
+    <div class="dansgolv-fotos-extra">
+        <img src="/dansgolv/dansgolv5.png" alt="Dansgolv 5" class="dansgolv-foto extra" />
+        <img src="/dansgolv/dansgolv6.png" alt="Dansgolv 6" class="dansgolv-foto extra" />
+    </div>
+    <img src="/dansgolv/dansgolv-wallpaper2.png" alt="Dansvloer" style="width:100%;height:100%;object-fit:cover;display:block;" />
 </div>
-<span class="kaj-accordion">
-    <svg width="120" height="48" viewBox="0 0 120 48" fill="none" aria-label="KAJ">
-        <text x="60" y="36" text-anchor="middle" font-size="36" font-family="Arial Black, Arial, sans-serif" fill="#42B16D" letter-spacing="10">
-            KAJ
-        </text>
-    </svg>
-</span>
 <div class="apple-watch-42-face">
     <svg viewBox="0 0 126 157" width="126" height="157" aria-label="Apple Watch 42mm">
         <defs>
@@ -27,7 +30,7 @@
                 <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.18" />
             </filter>
         </defs>
-           
+
     </svg>
     <div class="apple-watch-label">Apple Watch 42mm</div>
 </div>
@@ -63,6 +66,123 @@
 }
 
 <style>
+
+
+    .dansgolv-fotos-extra .foto7-hoog {
+        margin-top: -32px;
+    }
+    .dansgolv-fotos-extra {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        pointer-events: none;
+        z-index: 11;
+    }
+
+    .dansgolv-foto.extra {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border: 4px solid #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #0005, 0 0 12px #ff5e6290;
+        background: #fff8;
+        transform: rotate(-6deg) scale(1.03);
+        transition: transform 0.3s;
+        pointer-events: auto;
+        margin: 0 6px;
+    }
+
+        .dansgolv-foto.extra:hover {
+            transform: scale(1.13) rotate(0deg);
+            z-index: 12;
+        }
+
+    .dansgolv-foto-bidden {
+        position: absolute;
+        top: 70%; /* was 58% */
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-7deg);
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 0 32px 8px #ffe066cc, 0 4px 24px #0005;
+        background: #fff8;
+        z-index: 12;
+        pointer-events: auto;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+.dansgolv-foto-bidden:hover {
+    transform: translate(-50%, -50%) scale(1.12) rotate(0deg);
+    box-shadow: 0 0 48px 16px #ffe066ee, 0 8px 32px #0007;
+}
+    .dansgolv-fotos {
+        position: absolute;
+        top: 60%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 11;
+    }
+
+    .dansgolv-foto {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 4px solid #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #0005, 0 0 12px #ff5e6290;
+        background: #fff8;
+        transform: rotate(-8deg) scale(1.05);
+        transition: transform 0.3s;
+        pointer-events: auto;
+    }
+
+        .dansgolv-foto.right {
+            margin-right: 18px;
+            transform: rotate(8deg) scale(1.05);
+        }
+
+        .dansgolv-foto.left {
+            margin-left: 18px;
+        }
+
+        .dansgolv-foto:hover {
+            transform: scale(1.15) rotate(0deg);
+            z-index: 12;
+        }
+    .dansgolv-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        font-family: 'Merriweather', 'Georgia', serif;
+        font-size: 3.2rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        background: linear-gradient(90deg, #ff9966 0%, #ff5e62 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        text-shadow: 0 2px 24px #ff5e6290, 0 0 8px #fff, 0 0 2px #ff9966;
+        filter: brightness(1.12);
+        border-bottom: 2px solid #ff5e62;
+        border-radius: 0 0 12px 12px;
+        text-align: center;
+        width: 90%;
+        pointer-events: none;
+        user-select: none;
+        padding-bottom: 0.15em;
+    }
     .kaj-accordion {
         display: inline-block;
         cursor: pointer;
