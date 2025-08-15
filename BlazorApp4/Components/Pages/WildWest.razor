@@ -1,0 +1,174 @@
+@page "/wildwest"
+@rendermode InteractiveServer
+
+<!-- Google Fonts import for Special Elite -->
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+<div class="iphone15pro-western western-bg-overlay">
+    <div class="wildwest-title-text">LEGENDS OF THE WILD WEST</div>
+    <div class="wildwest-bg"></div>
+    <div class="wildwest-photos">
+        <img src="/wildwest/wild western 1.png" alt="Cowboy from the Wild West" class="wildwest-cowboy-img western-effect western-rope wildwest-pos1" />
+        <img src="/wildwest/wildwest2.png" alt="Cowboy and horse in the Wild West" class="wildwest-cowboy-img western-effect western-leather wildwest-pos2" />
+        <img src="/wildwest/wildwest3.png" alt="Wild West brand" class="wildwest-cowboy-img western-effect western-brand wildwest-pos3" />
+        <img src="/wildwest/wildwestern4.png" alt="Cowboy group on couch" class="wildwest-cowboy-img western-effect western-group wildwest-pos4" />
+        <img src="/wildwest/wildwestern5.png" alt="Wild West group" class="wildwest-cowboy-img western-effect western-frame wildwest-pos5" />
+    </div>
+</div>
+
+<style>
+.iphone15pro-western {
+    width: 430px;
+    height: 932px;
+    border: 10px solid #4b2e05;
+    border-radius: 54px;
+    box-shadow: 0 0 60px 0 #3e2a1a, 0 0 40px rgba(0,0,0,0.22);
+    overflow: hidden;
+    position: relative;
+    background: #f8f3e6;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.western-bg-overlay:before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background: url('https://www.transparenttextures.com/patterns/old-mathematics.png'), repeating-linear-gradient(135deg, #e2c89c22 0 8px, #fff0 8px 16px);
+    opacity: 0.25;
+}
+.wildwest-title-text {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-7deg) skew(-7deg, -2deg);
+    z-index: 10;
+    font-family: 'Special Elite', 'Merriweather', 'Georgia', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    color: #7c4a03;
+    text-shadow: 0 2px 24px #fffbe8, 0 0 8px #fff, 0 0 2px #b97a56;
+    user-select: none;
+    text-align: center;
+    filter: brightness(0.93) contrast(1.13);
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+    max-width: 100%;
+}
+.wildwest-photos {
+    position: absolute;
+    top: 210px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 210px);
+    z-index: 5;
+}
+.wildwest-title, .western-sign, .western-sign-text, .western-icon {
+    display: none;
+}
+.wildwest-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: url('/wildwest/wildwest6.png') center center / cover no-repeat;
+    box-shadow: 0 0 120px 0 #e2a76f inset;
+    filter: sepia(0.25) contrast(1.05) brightness(0.98);
+}
+.wildwest-cowboy-img {
+    width: 104px;
+    max-width: 34%;
+    max-height: 30%;
+    object-fit: cover;
+    z-index: 5;
+    position: absolute;
+    pointer-events: auto;
+    background: #f7e7c1;
+    padding: 10px 10px 14px 10px;
+    margin-bottom: 0;
+    /* Western photo effects */
+    filter: sepia(0.7) contrast(1.18) brightness(0.91) grayscale(0.18) drop-shadow(0 0 12px #6b3e1b88);
+    box-shadow: 0 10px 32px #4b2e0580, 0 0 0 8px #fffbe8, 0 0 40px 8px #6b3e1b44 inset;
+    border: 6px solid #e2a76f;
+    border-radius: 22px 38px 38px 22px/22px 44px 44px 22px;
+    /* Paper texture overlay */
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-blend-mode: multiply;
+}
+.wildwest-cowboy-img::after {
+    content: none;
+}
+.western-effect {
+    /* Burnt edge effect */
+    box-shadow: 0 0 0 6px #b97a56 inset, 0 8px 24px #7c4a0380, 0 0 0 8px #fffbe8;
+    background: repeating-linear-gradient(135deg, #f7e7c1 0 8px, #e2a76f 8px 16px);
+}
+.western-rope {
+    border: 5px dashed #a86b3c;
+    border-radius: 28px 28px 40px 40px/22px 22px 48px 48px;
+    background: repeating-linear-gradient(135deg, #f7e7c1 0 8px, #e2a76f 8px 16px);
+    transform: rotate(-8deg) scale(1.01);
+}
+.western-leather {
+    border: 5px double #b97a56;
+    border-radius: 22px 40px 40px 22px/22px 48px 48px 22px;
+    background: linear-gradient(120deg, #f3e0b8 80%, #b97a56 100%);
+    box-shadow: 0 8px 32px #b97a5630, 0 0 0 8px #fffbe8;
+    transform: rotate(10deg) scale(0.97);
+}
+.western-brand {
+    border: 5px solid #a86b3c;
+    border-radius: 44px 22px 44px 22px/44px 22px 44px 22px;
+    background: #fffbe8;
+    box-shadow: 0 0 0 6px #a86b3c inset, 0 8px 32px #a86b3c33;
+    filter: sepia(0.7) contrast(1.15) brightness(0.93) drop-shadow(0 0 8px #a86b3c);
+    transform: rotate(-15deg) scale(0.97);
+}
+.western-group {
+    border: 5px groove #8d5524;
+    border-radius: 34px 34px 48px 48px/28px 28px 54px 54px;
+    background: #f5e2c0;
+    box-shadow: 0 8px 32px #8d552455, 0 0 0 8px #fffbe8;
+    filter: sepia(0.35) contrast(1.05) brightness(0.98);
+    transform: rotate(13deg) scale(0.98);
+}
+.western-frame {
+    border: 5px ridge #b97a56;
+    border-radius: 28px 44px 44px 28px/28px 52px 52px 28px;
+    background: #f3e0b8;
+    box-shadow: 0 8px 32px #b97a5633, 0 0 0 8px #fffbe8;
+    filter: sepia(0.5) contrast(1.1) brightness(0.96);
+    transform: rotate(19deg) scale(0.98);
+}
+/* Nieuwe posities voor de vijf foto's binnen de wildwest-photos container */
+.wildwest-pos1 {
+    top: 10px;
+    left: 40px;
+}
+.wildwest-pos2 {
+    top: 80px;
+    right: 36px;
+}
+.wildwest-pos3 {
+    bottom: 60px;
+    left: 60px;
+}
+.wildwest-pos4 {
+    top: 200px;
+    left: 110px;
+}
+.wildwest-pos5 {
+    bottom: 120px;
+    right: 60px;
+}
+</style>
