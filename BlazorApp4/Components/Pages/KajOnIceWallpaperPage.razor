@@ -1,0 +1,59 @@
+@page "/kajonicewallpaper"
+@rendermode InteractiveServer
+
+<div class="night-ice-wallpaper">
+    <svg viewBox="0 0 430 932" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="night-ice-bg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#162447"/>
+                <stop offset="100%" stop-color="#1f4068"/>
+            </linearGradient>
+            <linearGradient id="iceMinimal" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e0f7ff"/>
+                <stop offset="100%" stop-color="#b3e0ff"/>
+            </linearGradient>
+        </defs>
+        <!-- Donkerblauwe nacht achtergrond -->
+        <rect width="430" height="932" fill="url(#nightSky)" />
+        <!-- Minimalistisch ijs-patroon onderaan -->
+        <polygon points="0,900 40,860 100,890 160,870 220,900 280,880 340,910 400,870 430,900 430,932 0,932" fill="url(#iceMinimal)" opacity="0.92"/>
+        <polygon points="60,910 120,880 180,910 240,890 300,920 360,900 420,920 430,932 0,932" fill="#e0f7ff" opacity="0.7"/>
+        <!-- IJssterren -->
+        <g opacity="0.85">
+            <g>
+                <polygon points="60,120 64,132 76,132 66,140 70,152 60,144 50,152 54,140 44,132 56,132" fill="#fff"/>
+                <polygon points="350,200 354,210 366,210 356,218 360,228 350,220 340,228 344,218 334,210 346,210" fill="#b3e0ff"/>
+                <polygon points="120,300 124,308 134,308 126,314 130,322 120,316 110,322 114,314 106,308 116,308" fill="#e0f7ff"/>
+                <polygon points="300,400 304,410 314,410 306,416 310,426 300,418 290,426 294,416 286,410 296,410" fill="#fff"/>
+                <polygon points="200,600 204,610 214,610 206,616 210,626 200,618 190,626 194,616 186,610 196,610" fill="#b3e0ff"/>
+                <polygon points="80,700 84,708 94,708 86,714 90,722 80,716 70,722 74,714 66,708 76,708" fill="#e0f7ff"/>
+            </g>
+        </g>
+        <!-- Kleine sterren -->
+        <circle cx="100" cy="200" r="2" fill="#fff" opacity="0.7"/>
+        <circle cx="380" cy="120" r="1.5" fill="#e0f7ff" opacity="0.7"/>
+        <circle cx="320" cy="300" r="1.8" fill="#fff" opacity="0.7"/>
+        <circle cx="250" cy="150" r="1.2" fill="#b3e0ff" opacity="0.7"/>
+        <circle cx="390" cy="500" r="1.6" fill="#e0f7ff" opacity="0.7"/>
+    </svg>
+</div>
+
+<style>
+.night-ice-wallpaper {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.night-ice-bg {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+</style>

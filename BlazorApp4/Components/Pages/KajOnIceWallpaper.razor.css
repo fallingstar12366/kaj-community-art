@@ -1,0 +1,40 @@
+.kajonice-wallpaper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.kajonice-bg-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .kajonice-bg-svg {
+    height: 100dvh;
+  }
+  .kajonice-wallpaper {
+    height: 100dvh;
+  }
+}
+
+.ice-font-title .shine {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg,rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.2) 40%,rgba(255,255,255,0.8) 100%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: shine-move 2.2s linear infinite;
+}
+
+@keyframes shine-move {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

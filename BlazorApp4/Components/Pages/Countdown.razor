@@ -1,0 +1,141 @@
+@page "/countdown"
+@rendermode InteractiveServer
+
+@* Test mode toggle *@
+@code {
+    private bool TestMode = false; // Zet op true om testklok te zien, false voor echte klok
+    private DateTime TargetDate;
+    private TimeSpan TimeLeft;
+    private int Weeks;
+    private int Days;
+    private string CrackClass = string.Empty;
+    private System.Threading.Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        if (TestMode)
+            TargetDate = DateTime.Now.AddSeconds(25);
+        else
+            TargetDate = new DateTime(2025, 10, 25, 17, 0, 0);
+        UpdateTimeLeft();
+        timer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(() =>
+            {
+                UpdateTimeLeft();
+                StateHasChanged();
+            });
+        }, null, 1000, 1000);
+    }
+
+    private void UpdateTimeLeft()
+    {
+        var now = DateTime.Now;
+        TimeLeft = TargetDate - now;
+        if (TimeLeft.TotalSeconds < 0)
+        {
+            TimeLeft = TimeSpan.Zero;
+        }
+        Weeks = (int)(TimeLeft.Days / 7);
+        Days = TimeLeft.Days % 7;
+        if (Weeks < 0) Weeks = 0;
+        if (Days < 0) Days = 0;
+
+        // 12 crack-niveaus voor nog vloeiender effect
+        if (TimeLeft.TotalSeconds <= 0)
+            CrackClass = "crack-max";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes == 0 && TimeLeft.Seconds <= 2)
+            CrackClass = "crack-12";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes == 0 && TimeLeft.Seconds <= 4)
+            CrackClass = "crack-11";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes == 0 && TimeLeft.Seconds <= 6)
+            CrackClass = "crack-10";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes == 0 && TimeLeft.Seconds <= 8)
+            CrackClass = "crack-9";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes == 0 && TimeLeft.Seconds <= 10)
+            CrackClass = "crack-8";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0 && TimeLeft.Minutes <= 0)
+            CrackClass = "crack-7";
+        else if (Weeks == 0 && Days == 0 && TimeLeft.Hours == 0)
+            CrackClass = "crack-6";
+        else if (Weeks == 0 && Days == 0)
+            CrackClass = "crack-5";
+        else if (Weeks == 0)
+            CrackClass = "crack-4";
+        else if (Weeks <= 1)
+            CrackClass = "crack-3";
+        else if (Weeks <= 2)
+            CrackClass = "crack-2";
+        else
+            CrackClass = "crack-1";
+    }
+
+    private RenderFragment RenderCrackSvg() => CrackClass switch
+    {
+        "crack-1" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/></svg>,
+        "crack-2" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/></svg>,
+        "crack-3" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/></svg>,
+        "crack-4" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/></svg>,
+        "crack-5" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/></svg>,
+        "crack-6" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/></svg>,
+        "crack-7" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/></svg>,
+        "crack-8" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/></svg>,
+        "crack-9" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,0 400,180" stroke="#b3e0ff" stroke-width="1.5" fill="none" opacity="0.12"/></svg>,
+        "crack-10" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,0 400,180" stroke="#b3e0ff" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="400,0 0,180" stroke="#143a56" stroke-width="1.5" fill="none" opacity="0.12"/></svg>,
+        "crack-11" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,0 400,180" stroke="#b3e0ff" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="400,0 0,180" stroke="#143a56" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="100,180 200,60 300,180" stroke="#e0f7ff" stroke-width="1.5" fill="none" opacity="0.12"/></svg>,
+        "crack-12" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.18"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.18"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2" fill="none" opacity="0.18"/><polyline points="0,0 400,180" stroke="#b3e0ff" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="400,0 0,180" stroke="#143a56" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="100,180 200,60 300,180" stroke="#e0f7ff" stroke-width="1.5" fill="none" opacity="0.12"/><polyline points="200,0 100,90 300,90 200,180" stroke="#b3e0ff" stroke-width="1.5" fill="none" opacity="0.12"/></svg>,
+        "crack-max" => @<svg class="crack-svg" viewBox="0 0 400 180"><polyline points="40,0 60,60 100,80 120,120 160,140 200,160" stroke="#b3e0ff" stroke-width="3" fill="none" opacity="0.7"/><polyline points="320,0 300,60 260,80 240,120 200,140 180,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.5"/><polyline points="200,0 200,40 220,80 240,120 260,160" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.6"/><polyline points="100,0 120,40 140,80 160,120 180,160" stroke="#b3e0ff" stroke-width="2" fill="none" opacity="0.5"/><polyline points="300,0 280,40 260,80 240,120 220,160" stroke="#143a56" stroke-width="2" fill="none" opacity="0.5"/><polyline points="0,90 60,100 120,110 180,120 240,130 300,140 360,150 400,160" stroke="#e0f7ff" stroke-width="3" fill="none" opacity="0.7"/><polyline points="50,180 100,120 200,100 300,120 350,180" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.7"/><polyline points="200,180 200,120 220,80 240,40 260,0" stroke="#143a56" stroke-width="2.5" fill="none" opacity="0.7"/><polyline points="0,0 400,180" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="400,0 0,180" stroke="#143a56" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="100,180 200,60 300,180" stroke="#e0f7ff" stroke-width="2.5" fill="none" opacity="0.3"/><polyline points="200,0 100,90 300,90 200,180" stroke="#b3e0ff" stroke-width="2.5" fill="none" opacity="0.3"/></svg>,
+        _ => null
+    };
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
+
+<div class="countdown-bg">
+    <div class="countdown-title">Countdown to KAJ on Ice Concert</div>
+    @if (TimeLeft.TotalSeconds > 0)
+    {
+        <div class="countdown-timer-outer @CrackClass" style="position:relative;">
+            @RenderCrackSvg()
+            <div class="countdown-timer">
+                @if (Weeks > 0)
+                {
+                    <div class="countdown-block">
+                        <span class="countdown-number">@Weeks</span>
+                        <span class="countdown-label">weeks</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                }
+                <div class="countdown-block">
+                    <span class="countdown-number">@Days</span>
+                    <span class="countdown-label">days</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <span class="countdown-number">@TimeLeft.Hours</span>
+                    <span class="countdown-label">hours</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <span class="countdown-number">@TimeLeft.Minutes</span>
+                    <span class="countdown-label">minutes</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <span class="countdown-number">@TimeLeft.Seconds</span>
+                    <span class="countdown-label">seconds</span>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="countdown-timer-outer crack-max" style="position:relative;">
+            @RenderCrackSvg()
+            <div class="countdown-timer ready">It's time!</div>
+        </div>
+    }
+</div>
