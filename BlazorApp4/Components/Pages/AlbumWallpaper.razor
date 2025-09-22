@@ -1,0 +1,21 @@
+@page "/albumwallpaper"
+@rendermode InteractiveServer
+
+@code {
+    // Zet hier de bestandsnamen van je geuploade foto's in wwwroot/album/
+    private readonly string[] AlbumPhotos = new string[]
+    {
+        // "album/foto1.jpg",
+        // "album/foto2.png",
+        // Voeg hier je bestandsnamen toe
+    };
+}
+
+<div class="album-wallpaper-bg">
+    <div class="album-wallpaper-grid">
+        @foreach (var photo in AlbumPhotos)
+        {
+            <img src="/@photo" alt="Album photo" class="album-wallpaper-img" />
+        }
+    </div>
+</div>

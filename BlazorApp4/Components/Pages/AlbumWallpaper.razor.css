@@ -1,0 +1,43 @@
+.album-wallpaper-bg {
+    width: 100vw;
+    min-height: 100vh;
+    background: #f8f6ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+.album-wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px 24px;
+    padding: 60px 40px;
+    max-width: 1400px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+.album-wallpaper-img {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 2px 8px #fff8;
+    border: 3px solid #fff8;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    filter: drop-shadow(0 2px 8px #2566af33);
+    margin: 0 auto;
+    display: block;
+}
+@media (max-width: 900px) {
+    .album-wallpaper-grid {
+        grid-template-columns: 1fr;
+        padding: 30px 8px;
+        gap: 18px 0;
+    }
+    .album-wallpaper-img {
+        max-width: 98vw;
+        height: 160px;
+    }
+}

@@ -1,0 +1,49 @@
+@page "/albumwatchface"
+@rendermode InteractiveServer
+
+<div class="applewatch7-outline">
+    <div class="applewatch7-face albumwatch-collage-bg">
+        <div class="albumwatch-collage-grid">
+            @for (int i = 0; i < 25; i++)
+            {
+                if (i < AlbumPhotos.Length)
+                {
+                    <img src="/@AlbumPhotos[i]" alt="Album foto" class="albumwatch-collage-img" />
+                }
+                else
+                {
+                    <div class="albumwatch-collage-placeholder"></div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<div class="apple-watch-label">Apple Watch 7<br />45mm KAJ</div>
+
+@code {
+    private readonly string[] AlbumPhotos = new string[]
+    {
+        "Album/BBB.png",
+        "Album/Botnia Paradise.png",
+        "Album/Dansgolv.png",
+        "Album/Firmansmans.png",
+        "Album/Gambämark.png",
+        "Album/Heimani i skick.png",
+        "Album/JåonåoejajåoYOLOjan åo.png",
+        "Album/KAJ 10.png",
+        "Album/Kajland1.png",
+        "Album/Kajland2.png",
+        "Album/Kajland3.png",
+        "Album/Karar i arbeit.png",
+        "Album/Kom Ti Byin.png",
+        "Album/Lokalproducerat pjas.png",
+        "Album/Mosquito.png",
+        "Album/Paavosbarkbrö.png",
+        "Album/PaToTaNaKako.png",
+        "Album/Professionella Pjasalappar.png",
+        "Album/Sauna Collection.png",
+        "Album/Tacohej.png",
+        "Album/Texttv.png",
+        "Album/Vemspojkedo.png"
+    };
+}

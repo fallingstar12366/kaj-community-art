@@ -1,0 +1,113 @@
+.applewatch7-outline {
+    width: 260px;
+    height: 350px;
+    border-radius: 70px;
+    background: transparent !important;
+    border: 6px solid #222;
+    box-shadow: 0 0 32px #000a, 0 2px 12px #fff2 inset;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.applewatch7-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 70px;
+    background:
+        linear-gradient(120deg, #204529 0%, #388e3c 60%, #7ed957 100%) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+.applewatch7-face::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 70px;
+    background:
+        url('data:image/svg+xml;utf8,<svg width="180" height="180" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path d="M36 80a8 8 0 1 1-4-7V20h4v53A8 8 0 0 1 36 80z" fill="%237ed957"/></g><g opacity="0.4"><path d="M100 40a6 6 0 1 1-3-5V10h3v25A6 6 0 0 1 100 40z" fill="%2343cea2"/></g><g opacity="0.3"><ellipse cx="70" cy="120" rx="7" ry="4" fill="%23b2f2e5"/></g></svg>');
+    background-repeat: repeat;
+    background-size: 180px 180px;
+    background-position: center center;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    mix-blend-mode: multiply;
+}
+
+.watchface-time {
+    margin-top: 18px;
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 8px #204529cc;
+    letter-spacing: 0.04em;
+}
+
+.watchface-kaj {
+    margin-top: 8px;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #7ed957;
+    text-shadow: 0 2px 8px #204529cc;
+    letter-spacing: 0.12em;
+    font-family: 'Merriweather', 'Georgia', serif;
+}
+
+.watchface-albumart img {
+    margin-top: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #1db95455;
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.albumwatch-collage-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 36px;
+    overflow: hidden;
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+}
+
+.albumwatch-collage-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    justify-items: stretch;
+    align-items: stretch;
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+
+.albumwatch-collage-img, .albumwatch-collage-placeholder {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    margin: auto;
+    padding: 0;
+    display: block;
+}

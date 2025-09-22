@@ -1,0 +1,161 @@
+@page "/albumiphonewallpaper"
+@rendermode InteractiveServer
+
+<div class="iphone18pro-wallpaper album-iphone-wallpaper">
+    <div class="album-iphone-fotos-collage-kaj-vertical">
+        @* Letter K *@
+        <div class="kaj-letter">
+            @for (int row = 0; row < 7; row++)
+            {
+                <div class="kaj-row">
+                    @for (int col = 0; col < 5; col++)
+                    {
+                        int index = GetPhotoIndexForLetter(row, col, 0);
+                        if (index >= 0 && index < AlbumPhotos.Length)
+                        {
+                            <img src="/@AlbumPhotos[index]"
+                                 alt="Album foto"
+                                 class="album-iphone-foto-collage-kaj" />
+                        }
+                        else
+                        {
+                            <span class="kaj-empty"></span>
+                        }
+                    }
+                </div>
+            }
+        </div>
+        @* Letter A *@
+        <div class="kaj-letter">
+            @for (int row = 0; row < 7; row++)
+            {
+                <div class="kaj-row">
+                    @for (int col = 0; col < 5; col++)
+                    {
+                        int index = GetPhotoIndexForLetter(row, col, 1);
+                        if (index >= 0 && index < AlbumPhotos.Length)
+                        {
+                            <img src="/@AlbumPhotos[index]"
+                                 alt="Album foto"
+                                 class="album-iphone-foto-collage-kaj" />
+                        }
+                        else
+                        {
+                            <span class="kaj-empty"></span>
+                        }
+                    }
+                </div>
+            }
+        </div>
+        @* Letter J *@
+        <div class="kaj-letter j">
+            @for (int row = 0; row < 7; row++)
+            {
+                <div class="kaj-row">
+                    @for (int col = 0; col < 5; col++)
+                    {
+                        int index = GetPhotoIndexForLetter(row, col, 2);
+                        if (index >= 0 && index < AlbumPhotos.Length)
+                        {
+                            <img src="/@AlbumPhotos[index]"
+                                 alt="Album foto"
+                                 class="album-iphone-foto-collage-kaj j" />
+                        }
+                        else
+                        {
+                            <span class="kaj-empty"></span>
+                        }
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private readonly string[] AlbumPhotos = new string[]
+    {
+        "Album/BBB.png",
+        "Album/Botnia Paradise.png",
+        "Album/Dansgolv.png",
+        "Album/Firmansmans.png",
+        "Album/Gambämark.png",
+        "Album/Heimani i skick.png",
+        "Album/JåonåoejajåoYOLOjanåo.png",
+        "Album/KAJ 10.png",
+        "Album/Kajland1.png",
+        "Album/Kajland2.png",
+        "Album/Kajland3.png",
+        "Album/Karar i arbeit.png",
+        "Album/Kom Ti Byin.png",
+        "Album/Lokalproducerat pjas.png",
+        "Album/Mosquito.png",
+        "Album/Paavosbarkbrö.png",
+        "Album/PaToTaNaKako.png",
+        "Album/Professionella Pjasalappar.png",
+        "Album/Sauna Collection.png",
+        "Album/Tacohej.png",
+        "Album/Texttv.png",
+        "Album/Vemspojkedo.png"
+    };
+
+    // Patronen voor K, A, J (7x5)
+    private readonly int[][,] patterns = new int[][,]
+    {
+        // K
+        new int[7,5] {
+            {1,0,0,0,1},
+            {1,0,0,1,0},
+            {1,0,1,0,0},
+            {1,1,0,0,0},
+            {1,0,1,0,0},
+            {1,0,0,1,0},
+            {1,0,0,0,1}
+        },
+// A
+new int[7,5] {
+    {0,1,1,1,0},
+    {1,0,0,0,1},
+    {1,0,0,0,1},
+    {1,1,1,1,1},
+    {1,0,0,0,1},
+    {1,0,0,0,1},
+    {1,0,0,0,1}
+},
+// J
+new int[7,5] {
+    {0,0,1,1,1},
+    {0,0,0,0,1},
+    {0,0,0,0,1},
+    {0,0,0,0,1},
+    {1,0,0,0,1},
+    {1,0,0,0,1},
+    {0,1,1,1,0}
+}
+    };
+
+    private int GetPhotoIndexForLetter(int row, int col, int letter)
+    {
+        int idx = 0;
+        // Tel alle gevulde vakjes vóór deze letter
+        for (int l = 0; l < letter; l++)
+        {
+            for (int r = 0; r < 7; r++)
+                for (int c = 0; c < 5; c++)
+                    if (patterns[l][r, c] == 1)
+                        idx++;
+        }
+        // Tel het aantal gevulde vakjes tot aan de huidige positie in deze letter
+        for (int r = 0; r < row; r++)
+            for (int c = 0; c < 5; c++)
+                if (patterns[letter][r, c] == 1)
+                    idx++;
+        for (int c = 0; c < col; c++)
+            if (patterns[letter][row, c] == 1)
+                idx++;
+        // Als deze positie gevuld is, geef de index modulo het aantal foto's terug
+        if (patterns[letter][row, col] == 1)
+            return idx % AlbumPhotos.Length;
+        return -1;
+    }
+}
